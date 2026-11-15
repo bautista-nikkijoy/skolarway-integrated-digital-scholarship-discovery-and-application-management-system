@@ -1,0 +1,106 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/System Plus College Foundation .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">System Plus College Foundation</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full or partial tuition fee discounts</li>
+            <li>Free miscellaneous and laboratory fees (for some grants)</li>
+            <li>Monthly stipend (for specific grants) </li>
+            <li>Book allowance (if applicable)</li>
+          </ul>
+        </div>
+      </div>
+
+      
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a Filipino citizen</li>
+            <li>Must be officially enrolled in SPCF</li>
+            <li>Must meet academic performance requirements (e.g., no failing grades)</li>
+            <li>Must have good moral character</li>
+            <li>Must pass the screening or tryout (for athletic or cultural scholarships)</li>
+            <li>Additional qualifications depending on the scholarship category</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Types of SPCF Scholarships:</h3>
+          <ul>
+            <li>Academic Scholarship – for students with high academic performance</li>
+            <li>Athletic Scholarship – for student-athletes competing in school sports</li>
+            <li>Cultural Scholarship – for those with talent in arts, music, dance, or theater</li>
+            <li>SPCF Grant-in-Aid Program – for financially challenged students</li>
+            <li>Leadership Scholarship – for student organization officers</li>
+            <li>External Scholarships – including those from CHED, DOST, and private partners </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished SPCF Scholarship Application Form</li>
+            <li>Latest academic grades or transcript</li>
+            <li>Certificate of Good Moral Character</li>
+            <li>Barangay Clearance or Certificate of Indigency (for financial grants)</li>
+            <li>Income documents (if applicable)</li>
+            <li> 2x2 ID photos</li>
+            <li>Proof of achievements (for cultural, academic, or athletic scholarships)</li>
+          </ul>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/systemplusaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

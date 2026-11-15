@@ -1,0 +1,194 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/City College Of San Fernando Scholarship and Grants.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">City College Of San Fernando Scholarship and Grants Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- Academic Year -->
+      <h3>Academic Year</h3>
+      <input type="text" formControlName="academicYear"><br>
+    
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Sex:</label>
+      <label><input type="radio" formControlName="sex" value="Male"> Male</label>
+      <label><input type="radio" formControlName="sex" value="Female"> Female</label><br>
+    
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+    
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+    
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="birthPlace"><br>
+    
+      <label>Civil Status:</label>
+      <label><input type="radio" formControlName="civilStatus" value="Single"> Single</label>
+      <label><input type="radio" formControlName="civilStatus" value="Married"> Married</label><br>
+    
+      <label>Mobile Number:</label>
+      <input type="text" formControlName="mobile"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="homeAddress"><br>
+    
+      <label>Barangay:</label>
+      <input type="text" formControlName="barangay"><br>
+    
+      <label>Length of Residency in CSFP (years):</label>
+      <input type="number" formControlName="residencyLength"><br>
+    
+      <label>Registered Voter of CSFP?</label>
+      <label><input type="radio" formControlName="registeredVoter" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="registeredVoter" value="No"> No</label><br>
+    
+      <!-- II. EDUCATIONAL INFORMATION -->
+      <h3>II. EDUCATIONAL INFORMATION</h3>
+      <label>Student ID No.:</label>
+      <input type="text" formControlName="studentId"><br>
+    
+      <label>Year Level:</label>
+      <label><input type="radio" formControlName="yearLevel" value="1st"> 1st</label>
+      <label><input type="radio" formControlName="yearLevel" value="2nd"> 2nd</label>
+      <label><input type="radio" formControlName="yearLevel" value="3rd"> 3rd</label>
+      <label><input type="radio" formControlName="yearLevel" value="4th"> 4th</label><br>
+    
+      <label>Course Enrolled:</label>
+      <input type="text" formControlName="course"><br>
+    
+      <label>GWA (Latest Grading Period):</label>
+      <input type="text" formControlName="gwa"><br>
+    
+      <label>Academic Standing:</label>
+      <label><input type="radio" formControlName="academicStanding" value="With Honors"> With Honors</label>
+      <label><input type="radio" formControlName="academicStanding" value="Good"> Good</label>
+      <label><input type="radio" formControlName="academicStanding" value="Needs Improvement"> Needs Improvement</label><br>
+    
+      <!-- III. SCHOLARSHIP TYPE -->
+      <h3>III. SCHOLARSHIP TYPE</h3>
+      <div *ngFor="let type of scholarshipTypes">
+        <label>
+          <input type="radio" formControlName="scholarshipType" [value]="type"> {{ type }}
+        </label>
+      </div>
+      <div *ngIf="scholarshipForm.get('scholarshipType')?.value === 'Special Government-funded Program'">
+        <label>Program Name:</label>
+        <input type="text" formControlName="specialProgramName"><br>
+      </div>
+    
+      <!-- IV. FAMILY AND FINANCIAL BACKGROUND -->
+      <h3>IV. FAMILY AND FINANCIAL BACKGROUND</h3>
+      <label>Father’s Name:</label>
+      <input type="text" formControlName="fatherName">
+      <label><input type="radio" formControlName="fatherStatus" value="Employed"> Employed</label>
+      <label><input type="radio" formControlName="fatherStatus" value="Unemployed"> Unemployed</label><br>
+    
+      <label>Father’s Occupation:</label>
+      <input type="text" formControlName="fatherOccupation"><br>
+    
+      <label>Mother’s Name:</label>
+      <input type="text" formControlName="motherName">
+      <label><input type="radio" formControlName="motherStatus" value="Employed"> Employed</label>
+      <label><input type="radio" formControlName="motherStatus" value="Unemployed"> Unemployed</label><br>
+    
+      <label>Mother’s Occupation:</label>
+      <input type="text" formControlName="motherOccupation"><br>
+    
+      <label>Guardian (if applicable):</label>
+      <input type="text" formControlName="guardian"><br>
+    
+      <label>Total Family Members in Household:</label>
+      <input type="number" formControlName="totalMembers"><br>
+    
+      <label>Combined Annual Gross Income (₱):</label>
+      <input type="number" formControlName="annualIncome"><br>
+    
+      <!-- V. INVOLVEMENT / TALENT / SERVICE -->
+      <h3>V. INVOLVEMENT / TALENT / SERVICE</h3>
+      <label>Leadership Roles:</label>
+      <input type="text" formControlName="leadership"><br>
+    
+      <label>Talent (Athletic/Artistic):</label>
+      <input type="text" formControlName="talent"><br>
+    
+      <label>Community Service / Volunteering:</label>
+      <input type="text" formControlName="volunteering"><br>
+
+
+      <h3>VI. DOCUMENT CHECKLIST</h3>
+
+<label><input type="checkbox" [checked]="docs['form']"> Completed Application Form</label>
+<input type="file" (change)="onFileChange('form', $event)"><br>
+
+<label><input type="checkbox" [checked]="docs['residencyCert']"> Barangay Certificate of Residency</label>
+<input type="file" (change)="onFileChange('residencyCert', $event)"><br>
+
+<label><input type="checkbox" [checked]="docs['incomeProof']"> Proof of Income</label>
+<input type="file" (change)="onFileChange('incomeProof', $event)"><br>
+
+<label><input type="checkbox" [checked]="docs['grades']"> Latest Report Card / TOR</label>
+<input type="file" (change)="onFileChange('grades', $event)"><br>
+
+<label><input type="checkbox" [checked]="docs['goodMoral']"> Certificate of Good Moral</label>
+<input type="file" (change)="onFileChange('goodMoral', $event)"><br>
+
+<label><input type="checkbox" [checked]="docs['photo']"> 2x2 ID Photo</label>
+<input type="file" (change)="onFileChange('photo', $event)"><br>
+
+
+
+      <!-- VII. DECLARATION -->
+      <h3>VII. DECLARATION</h3>
+      <p>
+        I hereby certify that the information provided in this application is true and correct.
+        I understand that any false statement or omission may result in the disqualification or termination of my scholarship privileges.
+      </p>
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="declarationDate"><br><br>
+    
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

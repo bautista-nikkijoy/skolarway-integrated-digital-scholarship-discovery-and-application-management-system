@@ -1,0 +1,88 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/CHED.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">CHED Merit Scholarship Program (CMSP)</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full or Partial Tuition and other school fees</li>
+            <li>Monthly Stipend</li>
+            <li>Book Allowance</li>
+            <li>Transportation and Miscellaneous Allowance</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Filipino citizen</li>
+            <li>Incoming first-year college students</li>
+            <li>GWA: ≥96% (Full Merit), 93–95% (Half Merit)</li>
+            <li>Graduate of Senior High School</li>
+            <li>Annual family income ≤ ₱400,000</li>
+            <li>Must enroll in CHED-recognized HEI</li>
+            <li>Not a recipient of other gov’t financial aid</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Certified true copy of grades</li>
+            <li>Certificate of good moral character</li>
+            <li>Proof of income (ITR, Indigency, etc.)</li>
+            <li>Birth Certificate</li>
+            <li>Recent 2×2 ID photo</li>
+            <li>Completed application form</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+    
+
+    <ion-button class="apply-button" href="/chedaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

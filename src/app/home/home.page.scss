@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+.home-background {
+  --background: #F3FBFB;
+}
+
+/* Custom toolbar (header) fixed at the top */
+.custom-toolbar {
+  --background: #F3FBFB; /* Background color of the header */
+  --color: #272343; /* Text color */
+  position: fixed; /* Fix the header to the top */
+  top: 0; /* Align it to the top */
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 10; /* Ensure it's above other content */
+  padding: 0px 0; /* Add some padding for better appearance */
+  box-sizing: border-box;
+}
+
+/* Container for user greeting (below the header) */
+.user-greeting {
+  display: flex;
+  justify-content: space-between; /* Space out the left and right side items */
+  align-items: center;
+  padding: 0 1vw;
+  margin-top: 40px; /* Add margin top to push the greeting below the fixed header */
+  z-index: 5; /* Ensure it appears below the fixed header */
+}
+
+/* Left side of the greeting (for profile image and text) */
+.greeting-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Profile image styling */
+.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #272343; /* Border around the profile image */
+}
+
+/* Greeting text styling */
+.greeting-text p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.greeting-text h2 {
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Right side logo styling */
+.skolarway-logo-right {
+  width: 55px;
+  height: auto;
+}
+
+  
+  
+  
+  .subtitle {
+    margin-top: -5px;
+    color: black;
+    padding-left: 30px;
+  }
+  
+  ion-segment {
+    margin: 10px 0;
+  }
+  
+  ion-card {
+    margin: 10px 0;
+  }
+  
+  .header-time {
+    font-size: 14px;
+    padding-left: 30px;
+    color: black;
+  }
+  
+  
+  .battery-icon {
+    font-size: 20px;
+    padding-right: 30px;
+    color: black;
+  }
+  .signal-icon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+  }
+
+  .wifi-icon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+  }
+
+  
+  .skolarway-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+    background-color: #F3FBFB;
+  }
+  
+  .skolarway-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .skolarway-title {
+    color: #272343;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 32px;
+    margin-bottom: 0.2em;
+    padding-left: 1vw;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+    color: black;
+    padding-left: 1vw;
+    margin-top: -10px;
+    font-family: system-ui, sans-serif;
+  }
+ 
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+  
+ /* Ensure the body takes the full height */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Allow vertical stacking */
+}
+
+/* Main content container */
+.main-content {
+  flex-grow: 1; /* Allow content to fill the remaining space */
+  padding-bottom: 60px; /* Space for the footer */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Scholarship cards styles */
+ion-card {
+  background-color: #E0F3F3 !important;
+  border: 1px solid #272343;
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%; /* Full width for responsiveness */
+  box-sizing: border-box;
+}
+
+.scholarship-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #E0F3F3;
+  padding: 8px;
+  border-radius: 8px;
+  flex-wrap: nowrap;
+}
+
+.scholarship-text {
+  flex-grow: 1;
+}
+
+.scholarship-text h2,
+.scholarship-text p {
+  margin: 0;
+  color: black;
+  background-color: transparent;
+  font-family: 'Arial', sans-serif;
+}
+
+.scholarship-text h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.scholarship-text p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+ion-avatar {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #272343;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+ion-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer Styles */
+.custom-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scholarship-item {
+    flex-direction: row;
+    padding: 8px 12px;
+  }
+
+  .scholarship-text h2 {
+    font-size: 1.2em;
+  }
+
+  .scholarship-text p {
+    font-size: 1em;
+  }
+
+  ion-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scholarship-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  ion-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+
+
+
+ 
+
+  .scrollable-segment {
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scroll */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    white-space: nowrap; /* Ensure content stays in one line */
+  
+    /* Hide the scrollbar */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  
+  ion-segment {
+    display: flex; /* Align buttons in a row */
+    flex-wrap: nowrap; /* Prevent wrapping of segment buttons */
+    width: fit-content; /* Let the segment adjust to the content's width */
+  }
+  
+  ion-segment-button {
+    flex: 0 0 auto; /* Prevent buttons from shrinking */
+    padding: 0px 0px; /* Adjust padding */
+    margin: 4px 6px; /* Add space between buttons */
+    background-color: #E0F3F3;
+    color: #272343;
+    border-radius: 12px;
+    font-size: 13px;
+    height: auto;
+    min-width: 120px; /* Ensure buttons have a minimum width */
+    
+    /* Remove ripple and underline */
+    ion-ripple-effect,
+    .button-native::after {
+      display: none !important;
+    }
+  
+    /* Remove any underline part (Ionic 7+) */
+    &::part(indicator) {
+      display: none !important;
+    }
+  
+    /* Selected state */
+    &.segment-button-checked {
+      background-color: #272343;
+      color: white;
+    }
+  }
+  
+  /* Ensure responsiveness on smaller screens */
+  @media (max-width: 768px) {
+    ion-segment-button {
+      font-size: 12px; /* Adjust font size on smaller screens */
+      padding: 0px 0px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    ion-segment-button {
+      font-size: 12px; /* Slightly smaller font size */
+      padding: 0px 0px; /* Adjust padding even further */
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #272343;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  z-index: 999;
+}
+
+.tab-button {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  text-decoration: none;  
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.tab-button.active .icon-wrapper {
+  background-color: #fdd835;
+  transform: translateY(-20px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+ion-icon {
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+
+.tab-label {
+  font-size: 12px;
+  margin-top: 4px;
+  color: transparent;
+  font-weight: 600;
+  display: block;
+  transition: color 0.3s ease;
+  transform: translateY(-16px); 
+}
+
+.tab-button.active .tab-label {
+  color: white;
+}

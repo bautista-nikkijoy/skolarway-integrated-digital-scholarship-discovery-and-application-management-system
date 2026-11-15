@@ -1,0 +1,151 @@
+<ion-content [fullscreen]="true" class="ion-padding home-background">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  
+
+
+
+  <!-- User Greeting -->
+  <div class="user-greeting">
+    <div class="greeting-left">
+      <img src="/assets/images/Bautista.png" alt="User" class="profile-img" />
+      <div class="greeting-text">
+        <p>Welcome back,</p>
+        <h2>Nikki Joy!</h2>
+      </div>
+    </div>
+    <img src="/assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo-right" />
+  </div>
+  
+  
+  <!-- Subtitle -->
+  <div class="skolarway-header-container">
+    <div class="skolarway-text-group">
+      <h1 class="skolarway-title">SKOLARWAY</h1>
+      <p class="subtitle">Dalan keng masaleseng bukas!</p>
+    </div>
+    
+  </div>
+  
+
+  <ion-searchbar 
+    [(ngModel)]="searchQuery" 
+    (ionInput)="onSearchChange($event)" 
+    placeholder="Search" 
+    class="searchbar">
+  </ion-searchbar>
+
+
+
+  <div class="scrollable-segment">
+    <ion-segment [(ngModel)]="selectedCategory" value="all">
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="gov">
+        <ion-label>Government</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="private">
+        <ion-label>Private</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="school">
+        <ion-label>School</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="merit">
+        <ion-label>Merit</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="financial">
+        <ion-label>Financial</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="course">
+        <ion-label>Course</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="shs">
+        <ion-label>SHS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="college">
+        <ion-label>College</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="full">
+        <ion-label>Full</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="partial">
+        <ion-label>Partial</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  
+  <div class="main-content">
+    <!-- Scholarship Cards -->
+    <ion-card *ngFor="let scholarship of filteredScholarships()" [routerLink]="[scholarship.routerLink]">
+
+      <ion-card-content>
+        <div class="scholarship-item">
+          <ion-avatar slot="start">
+            <img [src]="scholarship.logo">
+          </ion-avatar>
+          <div class="scholarship-text">
+            <h2>{{ scholarship.name }}</h2>
+            <p>{{ scholarship.description }}</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Custom Footer Navigation -->
+<div class="custom-footer">
+  <a class="tab-button" routerLink="/home" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="home-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Home</span>
+  </a>
+
+  <a class="tab-button" routerLink="/notifications" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Notifications</span>
+  </a>
+
+  <a class="tab-button" routerLink="/messages" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="mail-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Messages</span>
+  </a>
+
+  <a class="tab-button" routerLink="/profile" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="person-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Profile</span>
+  </a>
+</div>

@@ -1,0 +1,152 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Charity First Foundation Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Charity First Foundation Scholarship Application Form</h2>
+
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. APPLICANT INFORMATION -->
+      <h3>I. APPLICANT INFORMATION</h3>
+    
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Date of Birth (MM/DD/YYYY):</label>
+      <input type="date" formControlName="dob"><br>
+    
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+    
+      <label>Gender:</label><br>
+      <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+      <label><input type="radio" formControlName="gender" value="Female"> Female</label><br>
+    
+      <label>Civil Status:</label><br>
+      <label><input type="radio" formControlName="civilStatus" value="Single"> Single</label>
+      <label><input type="radio" formControlName="civilStatus" value="Married"> Married</label><br>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Address:</label>
+      <input type="text" formControlName="currentAddress"><br>
+    
+      <label>Permanent Address (if different):</label>
+      <input type="text" formControlName="permanentAddress"><br>
+    
+      <!-- II. SCHOLARSHIP PROGRAM APPLIED FOR -->
+      <h3>II. SCHOLARSHIP PROGRAM APPLIED FOR</h3>
+      
+      <label><input type="checkbox" formControlName="charityFirstFoundationScholarship"> Charity First Foundation Scholarship</label><br>
+    
+      <!-- III. ACADEMIC INFORMATION -->
+      <h3>III. ACADEMIC INFORMATION</h3>
+    
+      <label>Name of High School:</label>
+      <input type="text" formControlName="highSchoolName"><br>
+    
+      <label>Graduation Year:</label>
+      <input type="text" formControlName="graduationYear"><br>
+    
+      <label>High School Grade Point Average (GPA):</label>
+      <input type="text" formControlName="highSchoolGpa"><br>
+    
+      <label>Are you an incoming 1st-year college student?</label><br>
+      <label><input type="radio" formControlName="incomingFreshman" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="incomingFreshman" value="No"> No</label><br>
+    
+      <label>Course You Plan to Enroll In:</label>
+      <input type="text" formControlName="coursePlanToEnroll"><br>
+    
+      <label>Name of College/University:</label>
+      <input type="text" formControlName="collegeUniversityName"><br>
+    
+      <!-- IV. FAMILY INFORMATION -->
+      <h3>IV. FAMILY INFORMATION</h3>
+    
+      <label>Father’s Name:</label>
+      <input type="text" formControlName="fatherName"><br>
+    
+      <label>Mother’s Name:</label>
+      <input type="text" formControlName="motherName"><br>
+    
+      <label>Guardian’s Name (if applicable):</label>
+      <input type="text" formControlName="guardianName"><br>
+    
+      <label>Total Family Income (per year): ₱</label>
+      <input type="text" formControlName="familyIncome"><br>
+    
+      <!-- V. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>V. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Accomplished Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['idPictures']"> 1x1 and 2x2 ID Pictures</label><br>
+      <input type="file" (change)="onFileChange('idPictures', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birthCertificate']"> PSA Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('birthCertificate', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['goodMoralCertificate']"> Certificate of Good Moral Character</label><br>
+      <input type="file" (change)="onFileChange('goodMoralCertificate', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['reportCard']"> High School Report Card or Grades</label><br>
+      <input type="file" (change)="onFileChange('reportCard', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['itrOrIndigency']"> Income Tax Return or Certificate of Indigency</label><br>
+      <input type="file" (change)="onFileChange('itrOrIndigency', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['barangayClearance']"> Barangay Clearance</label><br>
+      <input type="file" (change)="onFileChange('barangayClearance', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['recommendationLetter']"> Recommendation Letter from School Principal</label><br>
+      <input type="file" (change)="onFileChange('recommendationLetter', $event)"><br>
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>
+        I hereby declare that the information I have provided in this application form is accurate and true to the best of my knowledge.
+        I understand that providing false or misleading information will lead to disqualification from the scholarship program. I am willing to fully participate in the formation activities and adhere to the values and commitments required by the Charity First Foundation.
+      </p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="declarationDate"><br><br>
+    
+      <!-- Submission -->
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+    
+  </div>
+</ion-content>

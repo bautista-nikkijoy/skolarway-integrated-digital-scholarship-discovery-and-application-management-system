@@ -1,0 +1,172 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/PSHS Grade 7 Scholarship National Competitive Examination.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">PSHS Grade 7 Scholarship National Competitive Examination Application Form</h2>
+
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+    
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Date of Birth (MM/DD/YYYY):</label>
+      <input type="date" formControlName="dob"><br>
+    
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="placeOfBirth"><br>
+    
+      <label>Gender:</label><br>
+      <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+      <label><input type="radio" formControlName="gender" value="Female"> Female</label><br>
+    
+      <label>Citizenship:</label>
+      <input type="text" formControlName="citizenship"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="homeAddress"><br>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <!-- II. EDUCATIONAL BACKGROUND -->
+      <h3>II. EDUCATIONAL BACKGROUND</h3>
+    
+      <label>Name of Elementary School:</label>
+      <input type="text" formControlName="elementarySchoolName"><br>
+    
+      <label>School Address:</label>
+      <input type="text" formControlName="schoolAddress"><br>
+    
+      <label>Grade Level:</label><br>
+      <label><input type="radio" formControlName="gradeLevel" value="Grade 6"> Grade 6</label><br>
+    
+      <label>Is your school public or private?</label><br>
+      <label><input type="radio" formControlName="schoolType" value="Public"> Public</label>
+      <label><input type="radio" formControlName="schoolType" value="Private"> Private</label><br>
+    
+      <label>Final Grade in Science (Grade 5):</label>
+      <input type="text" formControlName="finalScienceGrade"><br>
+    
+      <label>Final Grade in Math (Grade 5):</label>
+      <input type="text" formControlName="finalMathGrade"><br>
+    
+      <label>Overall Grade Average (Grade 5):</label>
+      <input type="text" formControlName="overallAverage"><br>
+    
+      <label>Belong to top 10% of class?</label><br>
+      <label><input type="radio" formControlName="topTenPercent" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="topTenPercent" value="No"> No</label><br>
+    
+      <label>Principal’s Certification Attached?</label><br>
+      <label><input type="radio" formControlName="principalCertification" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="principalCertification" value="No"> No</label><br>
+    
+      <!-- III. FAMILY INFORMATION -->
+      <h3>III. FAMILY INFORMATION</h3>
+    
+      <label>Father’s Name:</label>
+      <input type="text" formControlName="fatherName"><br>
+    
+      <label>Occupation:</label>
+      <input type="text" formControlName="fatherOccupation"><br>
+    
+      <label>Mother’s Name:</label>
+      <input type="text" formControlName="motherName"><br>
+    
+      <label>Occupation:</label>
+      <input type="text" formControlName="motherOccupation"><br>
+    
+      <label>Combined Annual Family Income: ₱</label>
+      <input type="text" formControlName="familyIncome"><br>
+    
+      <label>Number of Siblings:</label>
+      <input type="number" formControlName="siblingsCount"><br>
+    
+      <!-- IV. HEALTH INFORMATION -->
+      <h3>IV. HEALTH INFORMATION</h3>
+    
+      <label>Do you have any existing medical conditions?</label><br>
+      <label><input type="radio" formControlName="hasMedicalCondition" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="hasMedicalCondition" value="No"> No</label><br>
+    
+      <label *ngIf="scholarshipForm.get('hasMedicalCondition')?.value === 'Yes'">If yes, please specify:</label>
+      <input *ngIf="scholarshipForm.get('hasMedicalCondition')?.value === 'Yes'" type="text" formControlName="medicalConditionDetails"><br>
+    
+      <label>Are you physically fit to undertake a rigorous academic curriculum?</label><br>
+      <label><input type="radio" formControlName="physicallyFit" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="physicallyFit" value="No"> No</label><br>
+    
+      <!-- V. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>V. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Completed NCE Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['grade5ReportCard']"> Certified Grade 5 Report Card</label><br>
+      <input type="file" (change)="onFileChange('grade5ReportCard', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birthCertificate']"> Certified Copy of Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('birthCertificate', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['idPhotos']"> Two (2) recent 1×1 ID photos</label><br>
+      <input type="file" (change)="onFileChange('idPhotos', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['proofOfIncome']"> Proof of Income (for stipend and subsidy eligibility)</label><br>
+      <input type="file" (change)="onFileChange('proofOfIncome', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['schoolId']"> Valid School ID or Certification of Enrollment</label><br>
+      <input type="file" (change)="onFileChange('schoolId', $event)"><br>
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>
+        I certify that the information given above is true and correct to the best of my knowledge. I understand that any false information may disqualify me from the NCE and any scholarship benefits provided by PSHS.
+      </p>
+    
+      <label>Signature of Student Applicant:</label>
+      <input type="file" (change)="onFileChange('applicantSignature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="applicantDate"><br><br>
+    
+      <label>Signature of Parent/Guardian:</label>
+      <input type="file" (change)="onFileChange('guardianSignature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="guardianDate"><br><br>
+    
+      <!-- Submission -->
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+  </div>
+</ion-content>

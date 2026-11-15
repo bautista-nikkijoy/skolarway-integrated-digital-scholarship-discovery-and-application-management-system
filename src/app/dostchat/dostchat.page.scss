@@ -1,0 +1,251 @@
+.whole {
+    --background: #F3FBFB;
+    height: 100vh;
+    padding-bottom: 50px; /* Ensure footer is not overlapping content */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .custom-toolbar {
+    --background: #F3FBFB;
+    color: #272343;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0px 0;
+    box-sizing: border-box;
+  }
+  
+  .header-time {
+    font-size: 14px;
+    padding-left: 30px;
+    color: black;
+  }
+  
+  .battery-icon,
+  .signal-icon,
+  .wifi-icon {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .battery-icon {
+    padding-right: 30px;
+  }
+  
+  .signal-icon {
+    padding-right: 10px;
+  }
+  
+  .wifi-icon {
+    padding-right: 10px;
+  }
+  
+  .skolarway-container {
+    margin-top: 60px;
+    padding-left: 20px;
+    background-color: #F3FBFB;
+    display: flex;
+    align-items: center;
+  }
+  
+  .skolarway-logo {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  .skolarway-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #272343;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+
+  .top-back-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.back-icon {
+  font-size: 24px;
+  color: black;
+}
+
+
+
+
+  
+.custom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #272343;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    z-index: 999;
+  }
+  
+  .tab-button {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    text-decoration: none;  
+  }
+  
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-top: 10px;
+  }
+  
+  .tab-button.active .icon-wrapper {
+    background-color: #fdd835;
+    transform: translateY(-20px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+  }
+  
+  .tab-label {
+    font-size: 12px;
+    margin-top: 4px;
+    color: transparent;
+    font-weight: 600;
+    display: block;
+    transition: color 0.3s ease;
+    transform: translateY(-16px); 
+  }
+  
+  .tab-button.active .tab-label {
+    color: white;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .dost-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  
+    .dost-logo {
+      width: 70px;
+      height: auto;
+    }
+  }
+  
+  .message-thread {
+    padding: 20px;
+    margin-bottom: 100px;
+  
+    .chat-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  
+    .chat-row {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 10px;
+  
+      &.user {
+        justify-content: flex-end;
+  
+        .chat-bubble {
+          background-color: #d0d7e1;
+          color: black;
+        }
+      }
+  
+      &.admin {
+        justify-content: flex-start;
+  
+        .chat-bubble {
+          background-color: #413C58;
+          color: white;
+        }
+      }
+    }
+  
+    .chat-bubble {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+  
+    .chat-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 8px;
+    }
+  }
+
+  .message-input-wrapper {
+    position: fixed;
+    bottom: 56px; /* height of your custom footer */
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    background: #F3FBFB;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-message {
+    flex: 1;
+    padding: 10px 40px 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    background: #fff;
+  }
+  
+  .send-icon {
+    position: absolute;
+    right: 30px;
+    font-size: 20px;
+    color: black;
+  }
+  
+  

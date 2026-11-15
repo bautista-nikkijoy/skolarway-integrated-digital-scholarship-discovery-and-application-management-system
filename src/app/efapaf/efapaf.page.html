@@ -1,0 +1,142 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Educational Financial Assistance Program (EFAP).PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Educational Financial Assistance Program (EFAP) Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- ACADEMIC YEAR -->
+      <h3>Academic Year:</h3>
+      <input type="text" formControlName="academicYear"><br>
+    
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+    
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+    
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+    
+      <label>Sex:</label>
+      <input type="radio" value="Male" formControlName="sex"> Male
+      <input type="radio" value="Female" formControlName="sex"> Female<br>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="address"><br>
+    
+      <label>Barangay:</label>
+      <input type="text" formControlName="barangay"><br>
+    
+      <label>Municipality/City:</label>
+      <input type="text" formControlName="city"><br>
+    
+      <!-- II. EDUCATIONAL BACKGROUND -->
+      <h3>II. EDUCATIONAL BACKGROUND</h3>
+    
+      <label>Current Educational Level:</label><br>
+      <input type="radio" value="Senior High School" formControlName="educationLevel"> Senior High School
+      <input type="radio" value="College/University" formControlName="educationLevel"> College/University<br>
+    
+      <label>Grade/Year Level:</label>
+      <input type="text" formControlName="gradeLevel"><br>
+    
+      <label>Name of School:</label>
+      <input type="text" formControlName="schoolName"><br>
+    
+      <label>School Address:</label>
+      <input type="text" formControlName="schoolAddress"><br>
+    
+      <label>Is your school CHED/DepEd-recognized and located in Pampanga?</label><br>
+      <input type="radio" value="Yes" formControlName="isSchoolRecognized"> Yes
+      <input type="radio" value="No" formControlName="isSchoolRecognized"> No<br>
+    
+      <label>Current General Weighted Average (GWA):</label>
+      <input type="number" formControlName="gwa"><br>
+    
+      <!-- III. FAMILY BACKGROUND -->
+      <h3>III. FAMILY BACKGROUND</h3>
+    
+      <label>Father's Name:</label>
+      <input type="text" formControlName="fatherName">
+      <label>Occupation:</label>
+      <input type="text" formControlName="fatherOccupation"><br>
+    
+      <label>Mother's Name:</label>
+      <input type="text" formControlName="motherName">
+      <label>Occupation:</label>
+      <input type="text" formControlName="motherOccupation"><br>
+    
+      <label>Total Household Income (Annual):</label>
+      <input type="text" formControlName="householdIncome"><br>
+    
+      <!-- IV. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>IV. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Accomplished EFAP Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['residencyCert']"> Barangay Certificate of Residency</label><br>
+      <input type="file" (change)="onFileChange('residencyCert', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['schoolIdOrCert']"> School ID or Certificate of Enrollment/Registration</label><br>
+      <input type="file" (change)="onFileChange('schoolIdOrCert', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['proofOfIncome']"> Proof of Income or Certificate of Indigency</label><br>
+      <input type="file" (change)="onFileChange('proofOfIncome', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birthCert']">PSA Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('birthCert', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['idPhoto']"> Recent 2×2 ID Photo</label><br>
+      <input type="file" (change)="onFileChange('idPhoto', $event)"><br>
+    
+      <!-- V. DECLARATION -->
+      <h3>V. DECLARATION</h3>
+      <p>
+        I hereby declare that the information given above is true and correct. I understand that any false information may result in the forfeiture of my application. I also agree to maintain good academic standing and comply with EFAP guidelines throughout the term.
+      </p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="commitmentDate"><br><br>
+    
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+  </div>
+</ion-content>

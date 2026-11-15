@@ -1,0 +1,106 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/Angeles University Foundation.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Angeles University Foundation</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full or partial tuition fee coverage</li>
+            <li>Miscellaneous fee discounts</li>
+            <li>Book allowance (for select programs) </li>
+            <li>Monthly stipend (for certain scholarships)</li>
+            <li>Priority enrollment and academic advising</li>
+          </ul>
+        </div>
+      </div>
+
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a Filipino citizen</li>
+            <li>Must meet the academic, financial, or talent-based qualifications of the specific scholarship</li>
+            <li>Must be enrolled at AUF in an undergraduate or graduate program</li>
+            <li>Must comply with grade and conduct requirements as stated by AUF’s scholarship policies</li>
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Types of AUF Scholarships:</h3>
+          <ul>
+            <li>Academic Scholarship – for students with outstanding academic performance</li>
+            <li>Athletic Scholarship – for student-athletes competing in AUF varsity teams</li>
+            <li>Cultural Scholarship – for talents in dance, music, and theater</li>
+            <li>Leadership Scholarship – for student leaders with active involvement in organizations</li>
+            <li>Financial Assistance Grant – for students with proven financial need</li>
+            <li>External-funded Scholarships – from CHED, private companies, and NGOs in partnership with AUF</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li> Duly accomplished AUF Scholarship Application Form</li>
+            <li> Latest academic grades (report card or transcript)</li>
+            <li>Certificate of Good Moral Character</li>
+            <li>Recommendation letter (if required)</li>
+            <li>Proof of income (ITR, Certificate of Indigency, etc.)</li>
+            <li> Portfolio or tryout (for cultural or athletic scholarships)</li>
+            <li>Other documents as specified per scholarship type</li>
+          </ul>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/aufaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

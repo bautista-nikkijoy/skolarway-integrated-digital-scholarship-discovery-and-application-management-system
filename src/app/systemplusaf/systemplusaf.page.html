@@ -1,0 +1,183 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/System Plus College Foundation .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">System Plus College Foundation Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- Academic Year -->
+      <h3>Academic Year</h3>
+      Academic Year:
+      <input type="text" formControlName="academicYear"><br><br>
+    
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+    
+      Full Name (Last, First, Middle):
+      <input type="text" formControlName="fullName"><br><br>
+    
+      Date of Birth:
+      <input type="date" formControlName="birthDate"><br><br>
+    
+      Age:
+      <input type="text" formControlName="age"><br><br>
+    
+      Sex:
+      <label><input type="radio" formControlName="sex" value="Male"> Male</label>
+      <label><input type="radio" formControlName="sex" value="Female"> Female</label><br><br>
+    
+      Citizenship:
+      <label><input type="radio" formControlName="citizenship" value="Filipino"> Filipino</label><br><br>
+    
+      Mobile Number:
+      <input type="text" formControlName="mobile"><br><br>
+    
+      Email Address:
+      <input type="email" formControlName="email"><br><br>
+    
+      Home Address:
+      <input type="text" formControlName="address"><br><br>
+    
+      <!-- II. EDUCATIONAL BACKGROUND -->
+      <h3>II. EDUCATIONAL BACKGROUND</h3>
+    
+      Student ID Number:
+      <input type="text" formControlName="studentId"><br><br>
+    
+      Program / Course Enrolled:
+      <input type="text" formControlName="course"><br><br>
+    
+      College / Department:
+      <input type="text" formControlName="college"><br><br>
+    
+      Year Level:
+      <label><input type="radio" formControlName="yearLevel" value="1st"> 1st</label>
+      <label><input type="radio" formControlName="yearLevel" value="2nd"> 2nd</label>
+      <label><input type="radio" formControlName="yearLevel" value="3rd"> 3rd</label>
+      <label><input type="radio" formControlName="yearLevel" value="4th"> 4th</label><br><br>
+    
+      Current GWA / GPA:
+      <input type="text" formControlName="gwa"><br><br>
+    
+      Have you received an AUF scholarship before?
+      <label><input type="radio" formControlName="prevScholar" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="prevScholar" value="No"> No</label><br><br>
+    
+      If yes, specify:
+      <input type="text" formControlName="prevScholarDetails"><br><br>
+    
+      <!-- III. TYPE OF SCHOLARSHIP APPLIED FOR -->
+      <h3>III. TYPE OF SCHOLARSHIP APPLIED FOR</h3>
+    
+      <label><input type="radio" formControlName="type" value="Academic"> Academic Scholarship</label><br>
+      <label><input type="radio" formControlName="type" value="Athletic"> Athletic Scholarship</label><br>
+      <label><input type="radio" formControlName="type" value="Cultural"> Cultural Scholarship</label><br>
+      <label><input type="radio" formControlName="type" value="Leadership"> Leadership Scholarship</label><br>
+      <label><input type="radio" formControlName="type" value="Financial Assistance"> Financial Assistance Grant</label><br>
+      <label><input type="radio" formControlName="type" value="External"> External-funded Scholarship</label><br>
+    
+      Specify:
+      <input type="text" formControlName="externalSpecify"><br><br>
+    
+      <!-- IV. FAMILY AND FINANCIAL BACKGROUND -->
+      <h3>IV. FAMILY AND FINANCIAL BACKGROUND</h3>
+    
+      Father’s Name:
+      <input type="text" formControlName="fatherName">
+      Occupation:
+      <input type="text" formControlName="fatherOccupation"><br><br>
+    
+      Mother’s Name:
+      <input type="text" formControlName="motherName">
+      Occupation:
+      <input type="text" formControlName="motherOccupation"><br><br>
+    
+      Guardian (if applicable):
+      <input type="text" formControlName="guardian"><br><br>
+    
+      Total Family Income (Annual): ₱
+      <input type="number" formControlName="income"><br><br>
+    
+      Number of Family Members:
+      <input type="number" formControlName="householdSize"><br><br>
+    
+      <!-- V. SPECIAL QUALIFICATIONS & INVOLVEMENT -->
+      <h3>V. SPECIAL QUALIFICATIONS & INVOLVEMENT</h3>
+    
+      Sport / Event (Athletic):
+      <input type="text" formControlName="athleticDiscipline"><br>
+      <label><input type="checkbox" [checked]="docs['tryout']"> Tryout / Evaluation result attached</label>
+      <input type="file" (change)="onFileChange('tryout', $event)"><br><br>
+    
+      Artistic Discipline (Cultural):
+      <input type="text" formControlName="culturalTalent"><br>
+      <label><input type="checkbox" [checked]="docs['portfolio']"> Portfolio</label>
+      <input type="file" (change)="onFileChange('portfolio', $event)"><br><br>
+    
+      Student Organization Role (Leadership):
+      <input type="text" formControlName="leadership"><br><br>
+    
+      <!-- VI. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>VI. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['form']"> Completed AUF Scholarship Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['grades']"> Latest Academic Grades (Report Card / Transcript)</label>
+      <input type="file" (change)="onFileChange('grades', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['moral']"> Certificate of Good Moral Character</label>
+      <input type="file" (change)="onFileChange('moral', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['recommendation']"> Recommendation Letter (if required)</label>
+      <input type="file" (change)="onFileChange('recommendation', $event)"><br><br>
+    
+      <!-- VII. DECLARATION -->
+      <h3>VII. DECLARATION</h3>
+      I declare that the information stated herein is true and correct to the best of my knowledge. I understand that any misrepresentation or false statement may be grounds for disqualification from the scholarship grant. I agree to abide by the AUF scholarship policies and uphold the university’s values during the period of the grant.
+      <br><br>
+    
+      Signature of Applicant:
+      <input type="file" (change)="onFileChange('signature', $event)"><br><br>
+    
+      Date:
+      <input type="date" formControlName="declarationDate"><br><br>
+    
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+    
+    
+    
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

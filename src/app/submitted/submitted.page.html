@@ -1,0 +1,28 @@
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+
+  <div *ngIf="isSubmitted" class="success-container">
+    <div class="checkmark-wrapper">
+      <ion-icon name="checkmark-circle-outline" class="checkmark-icon"></ion-icon>
+    </div>
+    <div class="message">
+      <h2 class="success-message">Successful!</h2>
+      <p>Congratulations! Your application has been successfully submitted! </p>
+    </div>
+    <ion-button expand="block" (click)="goToHome()" style="--background: #272343">Continue</ion-button>
+  </div>
+
+</ion-content>

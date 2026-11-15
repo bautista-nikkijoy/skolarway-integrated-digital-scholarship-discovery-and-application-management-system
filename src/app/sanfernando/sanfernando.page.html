@@ -1,0 +1,106 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/City College Of San Fernando Scholarship and Grants.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">City College Of San Fernando Scholarship and Grants</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Free tuition and miscellaneous fees</li>
+            <li>Monthly allowance or stipend (for select grants)</li>
+            <li>Book and uniform allowance (depending on the program)</li>
+            <li>Access to leadership and academic development opportunities</li>
+            <li>Priority for city-sponsored programs and job placement assistance</li>
+          </ul>
+        </div>
+      </div>
+  
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a bonafide resident of the City of San Fernando, Pampanga</li>
+            <li>Must be officially enrolled at CCSF</li>
+            <li>Must meet the academic or performance qualifications required by the specific scholarship</li>
+            <li>Must not have any disciplinary record</li>
+            <li>Family’s annual gross income must meet the program’s income threshold</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Types of Scholarships and Grants:</h3>
+          <ul>
+            <li>Academic Scholarship – for high-performing students with excellent grades</li>
+            <li>Financial Assistance Grant – for students from indigent families</li>
+            <li>Leadership and Service Grant – for student leaders or those with active community involvement</li>
+            <li>Athletic and Talent Grant – for students with skills in sports or performing arts</li>
+            <li>Special Government-funded Programs – in partnership with CHED, LGU, or NGOs</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed Scholarship Application Form</li>
+            <li>Barangay Certificate of Residency</li>
+            <li>Proof of income (ITR or Certificate of Indigency)</li>
+            <li>Latest report card or transcript of records</li>
+            <li> Certificate of Good Moral Character</li>
+            <li>2x2 ID photo </li>
+            <li>Other documents depending on the specific grant applied for</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/sanfernandoaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

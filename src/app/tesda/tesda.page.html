@@ -1,0 +1,100 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/TESDA scholarship program .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">TESDA Scholarship Program</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Free tuition and training fees</li>
+            <li>Daily allowance (training support fund) of ₱160/day</li>
+            <li>Free national assessment and certification</li>
+            <li>Training materials and supplies</li>
+            <li>Insurance coverage</li>
+            <li>Additional support for special groups (e.g., OFWs, IPs, solo parents, etc.)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Major TESDA Scholarship Programs Include:</h3>
+          <ul>
+            <li>Training for Work Scholarship Program (TWSP)</li>
+            <li>Special Training for Employment Program (STEP)</li>
+            <li>Private Education Student Financial Assistance (PESFA)</li>
+            <li>Tulong Trabaho Scholarship Program (TTSP)</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Natural-born Filipino citizen</li>
+            <li>At least 18 years old (varies by program)</li>
+            <li>Out-of-school youth, unemployed, or underemployed</li>
+            <li>Must meet the specific program’s eligibility (some programs prioritize marginalized sectors)</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished application form</li>
+            <li>2x2 ID photo</li>
+            <li>Birth Certificate (PSA copy or local civil registrar)</li>
+            <li>Educational attainment documents (e.g., Form 137, diploma, or ALS certificate)</li>
+            <li>Barangay Certificate or Certificate of Indigency (depending on the program)</li>
+            <li>Valid ID</li>
+          </ul>
+        </div>
+      </div>
+
+  
+    </div>
+    
+
+    <ion-button class="apply-button" href="/tesdaaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

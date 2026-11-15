@@ -1,0 +1,93 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/Charity First Foundation Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Charity First Foundation Scholarship</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full tuition and miscellaneous fees</li>
+            <li>Daily transportation and meal allowance</li>
+            <li>Book allowance</li>
+            <li>School supplies and uniform support</li>
+            <li>Values formation seminars and spiritual retreats</li>
+            <li>Life coaching and career mentoring</li>
+            <li>Participation in outreach programs and leadership camps</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Filipino citizen</li>
+            <li>Must be an incoming 1st-year college student</li>
+            <li>Age between 16 and 21 years old​</li>
+            <li>Total family income must not exceed ₱200,000 per year</li>
+            <li>Must have no existing scholarship</li>
+            <li>Must be of good moral character and willing to participate in formation activities​</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished application form</li>
+            <li>1x1 and 2x2 ID pictures</li>
+            <li>PSA Birth Certificate</li>
+            <li>Certificate of Good Moral Character</li>
+            <li>High school report card or grades</li>
+            <li>Income Tax Return or Certificate of Indigency</li>
+            <li>Barangay Clearance</li>
+            <li>Recommendation letter from school principal or parish priest</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+    <ion-button class="apply-button" href="/charityaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

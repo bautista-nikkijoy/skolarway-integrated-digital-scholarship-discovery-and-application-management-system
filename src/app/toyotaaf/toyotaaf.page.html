@@ -1,0 +1,147 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Toyota Motor Philippines School of Technology .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Toyota Motor Philippines School of Technology Application Form</h2>
+
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+    
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Date of Birth (MM/DD/YYYY):</label>
+      <input type="date" formControlName="dob"><br>
+    
+      <label>Gender:</label><br>
+      <label><input type="radio" name="gender" value="Male" formControlName="gender"> Male</label>
+      <label><input type="radio" name="gender" value="Female" formControlName="gender"> Female</label>
+      <label><input type="radio" name="gender" value="Prefer not to say" formControlName="gender"> Prefer not to say</label><br>
+    
+      <label>Citizenship:</label>
+      <input type="text" formControlName="citizenship"><br>
+    
+      <label>Mobile Number:</label>
+      <input type="text" formControlName="mobileNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="homeAddress"><br>
+    
+      <!-- II. EDUCATIONAL BACKGROUND -->
+      <h3>II. EDUCATIONAL BACKGROUND</h3>
+    
+      <label>Senior High School Attended:</label>
+      <input type="text" formControlName="shsAttended"><br>
+    
+      <label>Track/Strand:</label><br>
+      <label><input type="radio" name="strand" value="STEM" formControlName="strand"> STEM</label>
+      <label><input type="radio" name="strand" value="TVL" formControlName="strand"> TVL</label>
+      <label><input type="radio" name="strand" value="Other" formControlName="strand"> Other</label>
+      <input *ngIf="scholarshipForm.get('strand')?.value === 'Other'" type="text" formControlName="otherStrand"><br>
+    
+      <label>Grade 11 General Average (%):</label>
+      <input type="text" formControlName="grade11Average"><br>
+    
+      <label>Grade 12 (1st–3rd Grading) General Average (%):</label>
+      <input type="text" formControlName="grade12Average"><br>
+    
+      <label>Lowest Grade in Science/Math (%):</label>
+      <input type="text" formControlName="lowestSciMath"><br>
+    
+      <label>Have you passed the TMP Tech Admission Exam?</label><br>
+      <label><input type="radio" name="examPassed" value="Yes" formControlName="examPassed"> Yes</label>
+      <label><input type="radio" name="examPassed" value="No" formControlName="examPassed"> No</label><br>
+    
+      <label>Have you completed the TMP Tech Interview?</label><br>
+      <label><input type="radio" name="interviewDone" value="Yes" formControlName="interviewDone"> Yes</label>
+      <label><input type="radio" name="interviewDone" value="No" formControlName="interviewDone"> No</label><br>
+    
+      <!-- III. SCHOLARSHIP TYPE APPLYING FOR -->
+      <h3>III. SCHOLARSHIP TYPE APPLYING FOR</h3>
+      <label><input type="radio" name="scholarshipType" value="Full" formControlName="scholarshipType"> Full Scholarship Grant</label><br>
+      <label><input type="radio" name="scholarshipType" value="Partial" formControlName="scholarshipType"> Partial Scholarship Grant</label><br>
+      <p><em>Note: Full includes tuition, dorm, transportation & meal. Partial includes tuition only.</em></p>
+    
+      <!-- IV. CHARACTER & COMMITMENT -->
+      <h3>IV. CHARACTER & COMMITMENT</h3>
+    
+      <label>Have you ever received disciplinary action in school?</label><br>
+      <label><input type="radio" name="disciplinaryAction" value="No" formControlName="disciplinaryAction"> No</label>
+      <label><input type="radio" name="disciplinaryAction" value="Yes" formControlName="disciplinaryAction"> Yes</label><br>
+      <label *ngIf="scholarshipForm.get('disciplinaryAction')?.value === 'Yes'">If yes, please specify:</label>
+      <input *ngIf="scholarshipForm.get('disciplinaryAction')?.value === 'Yes'" type="text" formControlName="disciplinaryDetails"><br>
+    
+      <label>Are you willing to undergo Toyota-specific training (e.g., Toyota Way, Safety & 5S, Kaizen)?</label><br>
+      <label><input type="radio" name="toyotaTraining" value="Yes" formControlName="toyotaTraining"> Yes</label>
+      <label><input type="radio" name="toyotaTraining" value="No" formControlName="toyotaTraining"> No</label><br>
+    
+      <!-- V. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>V. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Completed TMP Tech Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['psa']"> PSA Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('psa', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['reportCard']"> Senior High School Report Card (Form 138)</label><br>
+      <input type="file" (change)="onFileChange('reportCard', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['goodMoral']"> Certificate of Good Moral Character</label><br>
+      <input type="file" (change)="onFileChange('goodMoral', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['idPhoto']"> Recent 2×2 ID Photo</label><br>
+      <input type="file" (change)="onFileChange('idPhoto', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['admissionFee']"> Proof of Admission Fee Payment</label><br>
+      <input type="file" (change)="onFileChange('admissionFee', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['financialNeed']"> Proof of Financial Need (for scholarship applicants)</label><br>
+      <input type="file" (change)="onFileChange('financialNeed', $event)"><br>
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>
+        I hereby certify that all the information and documents provided in this application are true and correct. I understand that misrepresentation or submission of falsified records will result in the cancellation of my application or scholarship.
+      </p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="applicationDate"><br><br>
+    
+      <!-- Submission -->
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    </form>
+    
+    
+    
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "skolarway1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

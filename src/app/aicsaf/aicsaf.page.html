@@ -1,0 +1,138 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Assistance to Individuals in Crisis Situations (AICS).PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Assistance to Individuals in Crisis Situations (AICS) Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+
+      <label>Sex:</label><br>
+      <label><input type="radio" formControlName="sex" value="Male"> Male</label>
+      <label><input type="radio" formControlName="sex" value="Female"> Female</label><br>
+
+      <label>Civil Status:</label><br>
+      <label><input type="radio" formControlName="civilStatus" value="Single"> Single</label>
+      <label><input type="radio" formControlName="civilStatus" value="Married"> Married</label>
+      <label><input type="radio" formControlName="civilStatus" value="Widowed"> Widowed</label>
+      <label><input type="radio" formControlName="civilStatus" value="Separated"> Separated</label><br>
+
+      <label>Nationality:</label>
+      <input type="text" formControlName="nationality"><br>
+
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+
+      <label>Email Address (if any):</label>
+      <input type="email" formControlName="email"><br>
+
+      <label>Home Address:</label>
+      <input type="text" formControlName="address"><br>
+
+      <label>Barangay:</label>
+      <input type="text" formControlName="barangay"><br>
+
+      <label>Municipality/City:</label>
+      <input type="text" formControlName="city"><br>
+
+      <!-- II. TYPE OF ASSISTANCE REQUESTED -->
+      <h3>II. TYPE OF ASSISTANCE REQUESTED</h3>
+
+      <label><input type="checkbox" formControlName="medicalAssistance"> Medical Assistance</label><br>
+      <label><input type="checkbox" formControlName="burialAssistance"> Burial/Funeral Assistance</label><br>
+      <label><input type="checkbox" formControlName="transportationAssistance"> Transportation Assistance</label><br>
+      <label><input type="checkbox" formControlName="educationalAssistance"> Educational Assistance</label><br>
+      <label><input type="checkbox" formControlName="foodAssistance"> Food Assistance</label><br>
+      <label><input type="checkbox" formControlName="cashAssistance"> Cash/Material Assistance</label><br>
+      <label><input type="checkbox" formControlName="psychosocialSupport"> Psychosocial Support</label><br>
+
+      <label>Briefly describe the crisis situation:</label><br>
+      <textarea formControlName="crisisDescription"></textarea><br>
+
+      <!-- III. FAMILY AND FINANCIAL INFORMATION -->
+      <h3>III. FAMILY AND FINANCIAL INFORMATION</h3>
+
+      <label>Name of Parent/Spouse (if applicable):</label>
+      <input type="text" formControlName="parentSpouseName"><br>
+
+      <label>Relationship:</label>
+      <input type="text" formControlName="relationship"><br>
+
+      <label>Occupation:</label>
+      <input type="text" formControlName="occupation"><br>
+
+      <label>Monthly Household Income:</label>
+      <input type="text" formControlName="monthlyIncome"><br>
+
+      <label>Source of Income:</label>
+      <input type="text" formControlName="incomeSource"><br>
+
+      <!-- IV. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>IV. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Accomplished AICS Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+
+      <label><input type="checkbox" [checked]="docs['validId']"> Valid ID or PSA Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('validId', $event)"><br>
+
+      <label><input type="checkbox" [checked]="docs['proofOfCrisis']"> Proof of Crisis</label><br>
+      <input type="file" (change)="onFileChange('proofOfCrisis', $event)"><br>
+
+      <label><input type="checkbox" [checked]="docs['barangayCert']"> Barangay Certificate or Certificate of Indigency</label><br>
+      <input type="file" (change)="onFileChange('barangayCert', $event)"><br>
+
+      <label><input type="checkbox" [checked]="docs['idPhoto']"> Recent 2×2 ID Photo</label><br>
+      <input type="file" (change)="onFileChange('idPhoto', $event)"><br>
+
+      <!-- V. CERTIFICATION -->
+      <h3>V. CERTIFICATION</h3>
+      <p>
+        I hereby certify that the above information is true and correct. I understand that providing false information will result in the disapproval of my application. I also authorize DSWD to verify the details provided in this form.
+      </p>
+
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+
+      <label>Date:</label>
+      <input type="date" formControlName="commitmentDate"><br><br>
+
+      <ion-button type="submit" expand="block">Submit</ion-button>
+
+    </form>
+    
+    
+  </div>
+</ion-content>

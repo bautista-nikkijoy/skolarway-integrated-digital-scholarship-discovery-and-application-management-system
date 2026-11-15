@@ -1,0 +1,165 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Overseas Workers Welfare Administration .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Overseas Workers Welfare Administration Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. APPLICANT INFORMATION -->
+      <h3>I. APPLICANT INFORMATION</h3>
+    
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Date of Birth (MM/DD/YYYY):</label>
+      <input type="date" formControlName="dob"><br>
+    
+      <label>Gender:</label><br>
+      <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+      <label><input type="radio" formControlName="gender" value="Female"> Female</label><br>
+    
+      <label>Civil Status:</label><br>
+      <label><input type="radio" formControlName="civilStatus" value="Single"> Single</label>
+      <label><input type="radio" formControlName="civilStatus" value="Married"> Married</label>
+      <label><input type="radio" formControlName="civilStatus" value="Widowed"> Widowed</label>
+      <label><input type="radio" formControlName="civilStatus" value="Divorced"> Divorced</label><br>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Current Address:</label>
+      <input type="text" formControlName="currentAddress"><br>
+    
+      <label>Permanent Address (if different):</label>
+      <input type="text" formControlName="permanentAddress"><br>
+    
+      <!-- II. SCHOLARSHIP PROGRAM APPLIED FOR -->
+      <h3>II. SCHOLARSHIP PROGRAM APPLIED FOR</h3>
+      
+      <label><input type="checkbox" formControlName="edsp"> Education for Development Scholarship Program (EDSP)</label><br>
+      <label><input type="checkbox" formControlName="cmwsp"> Congressional Migrant Workers Scholarship Program (CMWSP)</label><br>
+      <label><input type="checkbox" formControlName="odsp"> OFW Dependent Scholarship Program (ODSP)</label><br>
+      <label><input type="checkbox" formControlName="elap"> Education and Livelihood Assistance Program (ELAP)</label><br>
+    
+      <!-- III. PERSONAL DETAILS -->
+      <h3>III. PERSONAL DETAILS</h3>
+    
+      <label>Nationality:</label>
+      <input type="text" formControlName="nationality" value="Filipino" readonly><br>
+    
+      <label>Relationship to OFW:</label><br>
+      <label><input type="radio" formControlName="relationshipToOFW" value="Child"> Child</label>
+      <label><input type="radio" formControlName="relationshipToOFW" value="Sibling"> Sibling</label><br>
+    
+      <label>OFW Member Name (if applying for dependent scholarship):</label>
+      <input type="text" formControlName="ofwName"><br>
+    
+      <label>OFW OWWA ID Number:</label>
+      <input type="text" formControlName="ofwOwwaId"><br>
+    
+      <label>OFW Passport Number (for CMWSP applicants):</label>
+      <input type="text" formControlName="ofwPassportNumber"><br>
+    
+      <!-- IV. ACADEMIC INFORMATION -->
+      <h3>IV. ACADEMIC INFORMATION</h3>
+    
+      <label>Name of College/University:</label>
+      <input type="text" formControlName="collegeName"><br>
+    
+      <label>Degree Program Enrolled/To Be Enrolled In:</label>
+      <input type="text" formControlName="degreeProgram"><br>
+    
+      <label>Course Classification:</label><br>
+      <label><input type="radio" formControlName="courseClassification" value="Incoming Freshman"> Incoming Freshman</label>
+      <label><input type="radio" formControlName="courseClassification" value="Continuing Student"> Continuing Student</label><br>
+    
+      <label>General Weighted Average (GWA) / Equivalent:</label>
+      <input type="text" formControlName="gwa"><br>
+    
+      <label>Proof of Enrollment/Admission (for ODSP applicants):</label><br>
+      <label><input type="radio" formControlName="proofOfEnrollment" value="Attached"> Attached</label>
+      <label><input type="radio" formControlName="proofOfEnrollment" value="Not Applicable"> Not Applicable</label><br>
+    
+      <!-- V. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>V. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+    
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Accomplished OWWA Scholarship Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birthCertificate']"> PSA Birth Certificate</label><br>
+      <input type="file" (change)="onFileChange('birthCertificate', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['cenomar']"> Certificate of No Marriage (CENOMAR)</label><br>
+      <input type="file" (change)="onFileChange('cenomar', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['idPhoto']"> 2x2 ID photo</label><br>
+      <input type="file" (change)="onFileChange('idPhoto', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['relationshipProof']"> Proof of Relationship to OFW (e.g., OWWA Member ID)</label><br>
+      <input type="file" (change)="onFileChange('relationshipProof', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['itr']"> Parent’s/Guardian’s Income Tax Return (ITR)</label><br>
+      <input type="file" (change)="onFileChange('itr', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['academicRecords']"> Academic Records: Form 137/138</label><br>
+      <input type="file" (change)="onFileChange('academicRecords', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['ofwPassport']"> Copy of OFW Passport (for CMWSP applicants)</label><br>
+      <input type="file" (change)="onFileChange('ofwPassport', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['familyIncomeProof']"> Proof of Family Income</label><br>
+      <input type="file" (change)="onFileChange('familyIncomeProof', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['dostExamResult']"> DOST-SEI Exam Result</label><br>
+      <input type="file" (change)="onFileChange('dostExamResult', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['enrollmentProof']"> Proof of Enrollment or Admission in a 4-5 year course (for ODSP applicants)</label><br>
+      <input type="file" (change)="onFileChange('enrollmentProof', $event)"><br>
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>
+        I hereby declare that the information provided is true and accurate to the best of my knowledge.
+        I understand that the provision of false or misleading information will result in the disqualification of my application.
+        I consent to the use of the personal data I have provided for the processing and administration of this scholarship application.
+      </p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="declarationDate"><br><br>
+    
+      <!-- Submission -->
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+    
+  </div>
+</ion-content>

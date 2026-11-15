@@ -1,0 +1,107 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/Megaworld Foundation Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Megaworld Foundation Scholarship</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full tuition fee coverage</li>
+            <li>Monthly stipend</li>
+            <li>Regular academic monitoring and support</li>
+            <li>Access to spiritual development and outreach activities</li>
+            <li>Priority employment opportunities in Megaworld and affiliate companies after graduation</li>
+          </ul>
+        </div>
+      </div>
+  
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Filipino citizen</li>
+            <li>Incoming freshmen or college student in a partner school</li>
+            <li>Minimum GWA of 85% or its equivalent</li>
+            <li>Must have a combined annual gross income of parents/guardians that does not exceed ₱300,000</li>
+            <li>Must be enrolled or planning to enroll in a partner university and an approved course</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Preferred Courses:</h3>
+          <ul>
+            <li>Engineering (Civil, Mechanical, Electrical, etc.)</li>
+            <li>Architecture</li>
+            <li>Information Technology / Computer Science</li>
+            <li>Accountancy</li>
+            <li>Management / Business-related courses</li>
+            <li>Communication and Marketing courses</li>
+            <li>Education</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Application form (downloadable via Megaworld Foundation site)</li>
+            <li>Income documents (ITR, Certificate of Indigency, etc.)</li>
+            <li>Certified true copy of grades</li>
+            <li>Recommendation letter from school principal or guidance counselor</li>
+            <li> Birth certificate</li>
+            <li> Recent 2x2 ID picture</li>
+            <li>Proof of enrollment or admission (for incoming freshmen)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/megaworldaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

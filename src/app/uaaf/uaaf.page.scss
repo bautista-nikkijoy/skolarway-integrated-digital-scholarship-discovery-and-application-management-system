@@ -1,0 +1,293 @@
+/* Global Styles */
+.whole {
+    --background: #F3FBFB;
+    height: 100vh;
+  }
+  
+  .custom-toolbar {
+    background: #F3FBFB;
+    color: #272343;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0px 0;
+    box-sizing: border-box;
+  }
+  
+  .header-time {
+    font-size: 14px;
+    padding-left: 30px;
+    color: black;
+  }
+  
+  
+  .battery-icon {
+    font-size: 20px;
+    padding-right: 30px;
+    color: black;
+  }
+  .signal-icon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+  }
+  
+  .wifi-icon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+  }
+  
+  .skolarway-container {
+    margin-top: 50px;
+    padding-left: 20px;
+    background-color: #F3FBFB;
+  }
+  
+  .skolarway-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #272343;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: -18px;
+    margin: 10px;
+  }
+  
+  .skolarway-logo {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+  
+  .skolarway-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Back Icon Styling */
+  .back-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -38px;
+    padding-right: 40px;
+  }
+  
+  .back-icon {
+    font-size: 20px;
+    color: #272343;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  ion-content {
+    background-color: #F3FBFB !important;
+    min-height: 100vh;
+  }
+  
+  ion-toolbar {
+    --background: #F3FBFB;
+  }
+  
+  .scholarship-container {
+    padding: 16px;
+    background-color: #F3FBFB;
+  }
+  
+  .logo-img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    object-fit: contain;
+  }
+  
+  .scholarship-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  ion-label h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+  }
+  
+  form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f3fbfb;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(39, 35, 67, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #272343;
+  
+    h3 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: #272343;
+      border-bottom: 2px solid #bae8e8;
+      padding-bottom: 0.5rem;
+    }
+  
+    p {
+      background-color: #bae8e8;
+      padding: 1rem;
+      border-left: 4px solid #ffd803;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #272343;
+    }
+  
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+  
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-right: 0.5rem;
+      }
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="file"] {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border: 1px solid #bae8e8;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      color: #272343;
+  
+      &:focus {
+        outline: none;
+        border-color: #ffd803;
+        box-shadow: 0 0 0 2px rgba(255, 216, 3, 0.3);
+      }
+    }
+  
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+    }
+  
+    .inline-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+  
+    ion-button[type="submit"] {
+      --background: #ffd803;
+      --color: #272343;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      width: 200px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  
+    ion-button[type="submit"]:hover {
+      --background: #e6c502;
+      --color: white;
+    }
+  }
+  
+  /* Hide br tags for a cleaner layout */
+  br {
+    display: none;
+  }
+  
+  
+  input.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched {
+    border: 2px solid red !important;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ::ng-deep .custom-error-alert {
+    --background: #bae8e8;  /* Your custom background color */
+    --color: #ffffff;       /* White text color for contrast */
+    --border-radius: 12px;
+    --padding: 20px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  ::ng-deep .custom-error-alert .alert-header {
+    background-color:  #bae8e8; ;  // Background color for the header
+    color: #272343;             // White color for header text
+    font-size: 18px;
+    font-weight: bold;          // Make the header text bold
+    text-align: center;         // Center-align the header text
+  }
+  
+  
+  ::ng-deep .custom-error-alert .alert-message {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #272343;  /* Text color for the message */
+  }
+  
+  ::ng-deep .custom-error-alert .alert-button {
+    background-color: #272343;  /* Button background color */
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 0 auto;             /* Center the button */
+    display: block;             /* Ensure the button is block-level */
+  }
+  
+  ::ng-deep .custom-error-alert .alert-button:hover {
+    background-color: #bae8e8; ;  /* Darker background for hover effect */
+    color: #272343;
+  }
+  
+  ::ng-deep .custom-error-alert .alert-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #272343;
+  }
+  
+
+
+
+
+  

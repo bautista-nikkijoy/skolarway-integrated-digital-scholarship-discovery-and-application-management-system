@@ -1,0 +1,150 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/TESDA scholarship program .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">TESDA Scholarship Programs Application Form</h2>
+
+    <form [formGroup]="tesdaForm" (ngSubmit)="onSubmit()">
+
+      <!-- PROGRAM APPLIED FOR -->
+      <h3>Program Applied For</h3>
+      <label><input type="radio" value="TWSP" formControlName="program"> Training for Work Scholarship Program (TWSP)</label><br>
+      <label><input type="radio" value="STEP" formControlName="program"> Special Training for Employment Program (STEP)</label><br>
+      <label><input type="radio" value="PESFA" formControlName="program"> Private Education Student Financial Assistance (PESFA)</label><br>
+      <label><input type="radio" value="TTSP" formControlName="program"> Tulong Trabaho Scholarship Program (TTSP)</label><br>
+    
+      <label>Training Title/Course:</label>
+      <input type="text" formControlName="trainingTitle"><br>
+    
+      <label>Training Institution/TVI:</label>
+      <input type="text" formControlName="institution"><br>
+    
+      <label>Training Duration (Start–End):</label>
+      <input type="text" formControlName="trainingDuration"><br>
+    
+      <!-- PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Sex:</label>
+      <input type="radio" value="Male" formControlName="sex"> Male
+      <input type="radio" value="Female" formControlName="sex"> Female<br>
+    
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+    
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+    
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="placeOfBirth"><br>
+    
+      <label>Citizenship:</label>
+      <input type="radio" value="Filipino" formControlName="citizenship"> Filipino<br>
+    
+      <label>Civil Status:</label>
+      <input type="radio" value="Single" formControlName="civilStatus"> Single
+      <input type="radio" value="Married" formControlName="civilStatus"> Married
+      <input type="radio" value="Widow/er" formControlName="civilStatus"> Widow/er
+      <input type="radio" value="Separated" formControlName="civilStatus"> Separated<br>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address (if any):</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="address"><br>
+    
+      <!-- ELIGIBILITY INFORMATION -->
+      <h3>II. ELIGIBILITY INFORMATION</h3>
+      <label *ngFor="let status of eligibilityOptions">
+        <input type="checkbox" [value]="status" (change)="onEligibilityChange($event)">
+        {{ status }}
+      </label><br>
+    
+      <label>Are you currently employed?</label>
+      <input type="radio" value="Yes" formControlName="employed"> Yes
+      <input type="radio" value="No" formControlName="employed"> No<br>
+    
+      <div *ngIf="tesdaForm.get('employed')?.value === 'Yes'">
+        <label>Position:</label>
+        <input type="text" formControlName="position"><br>
+      </div>
+    
+      <label>Last School Attended:</label>
+      <input type="text" formControlName="lastSchool"><br>
+    
+      <label>Highest Educational Attainment:</label>
+      <div *ngFor="let level of educationOptions">
+        <input type="radio" [value]="level" formControlName="education"> {{ level }}
+      </div>
+    
+      <label>Skills or Work Experience (if any):</label>
+      <input type="text" formControlName="skills"><br>
+    
+      <!-- DOCUMENTARY REQUIREMENTS -->
+      <h3>III. DOCUMENTARY REQUIREMENTS</h3>
+      <label><input type="checkbox" [checked]="docs.form"> Accomplished Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs.photo"> Recent 2x2 ID Photo</label>
+      <input type="file" (change)="onFileChange('photo', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs.birth"> PSA/NSO Birth Certificate or Local Civil Registrar Copy</label>
+      <input type="file" (change)="onFileChange('birth', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs.educProof"> Educational Attainment Proof</label>
+      <input type="file" (change)="onFileChange('educProof', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs.brgyCert"> Barangay Certificate / Certificate of Indigency</label>
+      <input type="file" (change)="onFileChange('brgyCert', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs.validId"> Any Valid Government-issued ID</label>
+      <input type="file" (change)="onFileChange('validId', $event)"><br>
+    
+      <!-- APPLICANT'S COMMITMENT -->
+      <h3>IV. APPLICANT'S COMMITMENT</h3>
+      <p>I declare that the information provided above is true and correct. I understand that this scholarship is intended to support my training and future employability. I am willing to comply with TESDA's policies and procedures, and I understand that false statements may result in disqualification.</p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="commitmentDate"><br><br>
+    
+      <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>
+    </form>
+    
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

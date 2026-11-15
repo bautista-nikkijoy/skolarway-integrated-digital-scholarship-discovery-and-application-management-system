@@ -1,0 +1,108 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/University of the Assumption .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">University of the Assumption</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full or partial tuition fee discounts</li>
+            <li>Waiver of miscellaneous and laboratory fees</li>
+            <li> Monthly stipend or book allowance</li>
+            <li>Access to leadership and spiritual formation programs</li>
+            <li>Priority consideration for honors and recognition</li>
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Filipino citizen</li>
+            <li>Must be officially enrolled at the University of the Assumption</li>
+            <li>Must meet specific grade or performance requirements depending on the scholarship</li>
+            <li>Must have no disciplinary record</li>
+            <li>Must comply with the formation activities and scholarship policies of UA</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Types of UA Scholarships:</h3>
+          <ul>
+            <li>Academic Scholarship – for students with outstanding academic performance</li>
+            <li>Athletic Scholarship – for students who are part of UA varsity teams</li>
+            <li>Cultural Scholarship – for students active in performing arts (choir, dance troupe, etc.)</li>
+            <li>Religious Vocation Scholarship – for seminarians and religious aspirants</li>
+            <li>Financial Assistance Grant – for students from low-income families</li>
+            <li> Leadership Scholarship – for student leaders in organizations or councils</li>
+            <li>External Scholarships – CHED, DOST, LGUs, and private sector partners </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished UA Scholarship Application Form</li>
+            <li>Latest grades or transcript</li>
+            <li>Certificate of Good Moral Character</li>
+            <li>2x2 ID photos</li>
+            <li>Proof of income or Certificate of Indigency (for financial grants)</li>
+            <li>Recommendation letter (if required) </li>
+            <li>Portfolio, audition, or tryout (for cultural or athletic applicants)</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/uaaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

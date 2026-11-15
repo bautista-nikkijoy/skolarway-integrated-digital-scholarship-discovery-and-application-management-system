@@ -1,0 +1,108 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/HOLY ANGEL UNIVERSITY .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">HOLY ANGEL UNIVERSITY</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full or partial tuition and miscellaneous fee coverage</li>
+            <li>Monthly stipend or book allowance</li>
+            <li> Access to special programs, training, or mentoring</li>
+            <li>Priority registration privileges</li>
+            <li>Recognition and awards</li>
+          </ul>
+        </div>
+      </div>
+  
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a Filipino citizen</li>
+            <li>Must be officially enrolled in any undergraduate or graduate program at HAU</li>
+            <li>Must meet the specific GPA or performance qualifications required by the scholarship</li>
+            <li>Must demonstrate good moral character</li>
+            <li>Must pass evaluation, audition, tryouts, or interview (if applicable)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Types of HAU Scholarships:</h3>
+          <ul>
+            <li>Entrance Scholarships – for incoming freshmen with high honors</li>
+            <li>Academic Scholarships – for current students with excellent academic standing</li>
+            <li>Athletic Scholarships – for varsity athletes</li>
+            <li>Artistic/Cultural Scholarships – for talents in music, theater, and arts</li>
+            <li>Financial Aid Grants – for students from low-income families</li>
+            <li> Leadership Scholarships – for student government and organization leaders</li>
+            <li> Service Grants – for student assistants</li>
+            <li>External-funded Scholarships – CHED, DOST, LGUs, and private partners</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed HAU Scholarship Application Form</li>
+            <li>Latest academic records or report card</li>
+            <li>Certificate of Good Moral Character</li>
+            <li>Recent 2x2 photo</li>
+            <li>Proof of income or Certificate of Indigency (for financial assistance) </li>
+            <li>Portfolio, audition video, or tryout results (for arts/athletics) </li>
+            <li>Recommendation letter (for leadership or academic awards)</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/hauaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

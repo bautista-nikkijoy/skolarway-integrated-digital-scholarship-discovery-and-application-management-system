@@ -1,0 +1,178 @@
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+
+
+
+
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+      <img src="/assets/images/Bautista.png" alt="Profile Picture" class="profile-img" />
+      <h2 class="profile-name">Nikki Joy L. Bautista</h2>
+      <p class="profile-role">STUDENT</p>
+
+
+
+      <!-- Profile Action Buttons Styled Individually -->
+      <div class="action-card">
+        <ion-item button lines="none" (click)="goToEditProfile()">
+          <ion-icon slot="start" name="create-outline"></ion-icon>
+          <ion-label>Edit Profile</ion-label>
+        </ion-item>
+      </div>
+      
+
+<div class="action-card">
+  <ion-item button lines="none" (click)="goToHelpQuestions()">
+    <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+    <ion-label>Help</ion-label>
+  </ion-item>
+</div>
+
+
+
+
+<!-- "Info" action card -->
+<div class="action-card">
+  <ion-item button lines="none" (click)="toggleInfo()">
+    <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+    <ion-label>Info</ion-label>
+  </ion-item>
+</div>
+
+<!-- Info Modal -->
+<div *ngIf="showInfo" class="info-modal-backdrop" (click)="closeInfo()">
+  <div class="info-modal-content" (click)="$event.stopPropagation()">
+
+    <!-- Header with INFO and X button -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <span style="font-size: 14px; font-weight: bold; letter-spacing: 1px;">INFO</span>
+      <ion-icon 
+        name="close" 
+        style="font-size: 20px; cursor: pointer;" 
+        (click)="closeInfo()">
+      </ion-icon>
+    </div>
+
+    <!-- What is SkolarWay -->
+    <h2>📘 What is SkolarWay?</h2>
+    <p>
+      SkolarWay is a mobile app designed to help incoming college students in Pampanga discover available scholarships. It shows you:
+    </p>
+    <ul>
+      <li>Scholarships you may be eligible for</li>
+      <li>Requirements and contract terms</li>
+      <li>Application deadlines</li>
+      <li>Instructions on how and where to apply</li>
+    </ul>
+
+    <!-- Who is SkolarWay for -->
+    <h3>🎯 Who is SkolarWay for?</h3>
+    <ul>
+      <li>Incoming 1st year college students</li>
+      <li>Students based in Pampanga</li>
+      <li>Those looking for financial aid or academic scholarships</li>
+    </ul>
+
+    <!-- Data & Privacy -->
+    <h3>🔐 Data & Privacy</h3>
+    <ul>
+      <li>Your data is only used to match you with scholarships.</li>
+      <li>We don’t share your personal information with third parties.</li>
+    </ul>
+
+    <!-- Contact Us -->
+    <h3>📞 Contact Us</h3>
+    <p>Need assistance? We're here to help!</p>
+    <p>Email: <a href="mailto:support@skolarway.ph">supportskolarway.ph</a></p>
+    <p>Office: DHVSU, Mexico Campus, Pampanga</p>
+    <p>Support Hours: Mon–Fri, 9:00 AM – 5:00 PM</p>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="action-card">
+  <ion-item button lines="none">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    <ion-label>Log Out</ion-label>
+  </ion-item>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Custom Footer Navigation -->
+<div class="custom-footer">
+  <a class="tab-button" routerLink="/home" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="home-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Home</span>
+  </a>
+
+  <a class="tab-button" routerLink="/notifications" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Notifications</span>
+  </a>
+
+  <a class="tab-button" routerLink="/messages" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="mail-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Messages</span>
+  </a>
+
+  <a class="tab-button" routerLink="/profile" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="person-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Profile</span>
+  </a>
+</div>

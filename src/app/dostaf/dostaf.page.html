@@ -1,0 +1,231 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/DOST-SEI Undergraduate Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">DOST-SEI Undergraduate Scholarship Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+      
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName" [class.invalid]="scholarshipForm.get('fullName')?.invalid && scholarshipForm.get('fullName')?.touched"><br>
+      <div *ngIf="scholarshipForm.get('fullName')?.invalid && scholarshipForm.get('fullName')?.touched" class="error-message">Full Name is required.</div>
+    
+      <label>Sex:</label>
+      <div>
+        <input type="radio" value="Male" [checked]="scholarshipForm.get('sex')?.value === 'Male'" (change)="scholarshipForm.get('sex')?.setValue('Male')"> Male
+        <input type="radio" value="Female" [checked]="scholarshipForm.get('sex')?.value === 'Female'" (change)="scholarshipForm.get('sex')?.setValue('Female')"> Female<br>
+      </div>
+    
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+    
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="placeOfBirth"><br>
+    
+      <label>Citizenship:</label>
+      <div>
+        <input type="radio" value="Natural-born Filipino" [checked]="scholarshipForm.get('citizenship')?.value === 'Natural-born Filipino'" (change)="scholarshipForm.get('citizenship')?.setValue('Natural-born Filipino')"> Natural-born Filipino
+      </div>
+    
+      <label>Civil Status:</label>
+      <div>
+        <input type="radio" value="Single" [checked]="scholarshipForm.get('civilStatus')?.value === 'Single'" (change)="scholarshipForm.get('civilStatus')?.setValue('Single')"> Single
+        <input type="radio" value="Married" [checked]="scholarshipForm.get('civilStatus')?.value === 'Married'" (change)="scholarshipForm.get('civilStatus')?.setValue('Married')"> Married
+        <input type="radio" value="Others" [checked]="scholarshipForm.get('civilStatus')?.value === 'Others'" (change)="scholarshipForm.get('civilStatus')?.setValue('Others')"> Others<br>
+      </div>
+    
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="emailAddress"><br>
+    
+      <label>Current Address:</label>
+      <input type="text" formControlName="homeAddress"><br>
+    
+      <label>Region of Residence:</label>
+      <input type="text" formControlName="region"><br>
+    
+      <label>Living Arrangement (for transportation allowance consideration):</label>
+      <div>
+        <input type="radio" value="Within Home Region" [checked]="scholarshipForm.get('livingArrangement')?.value === 'Within Home Region'" (change)="scholarshipForm.get('livingArrangement')?.setValue('Within Home Region')"> Within Home Region
+        <input type="radio" value="Outside Home Region" [checked]="scholarshipForm.get('livingArrangement')?.value === 'Outside Home Region'" (change)="scholarshipForm.get('livingArrangement')?.setValue('Outside Home Region')"> Outside Home Region
+      </div>
+    
+      <!-- II. FAMILY BACKGROUND -->
+      <h3>II. FAMILY BACKGROUND</h3>
+      <label>Father's Name:</label>
+      <input type="text" formControlName="fatherName"><br>
+    
+      <label>Father Status:</label>
+      <div>
+        <input type="radio" value="Living" [checked]="scholarshipForm.get('fatherStatus')?.value === 'Living'" (change)="scholarshipForm.get('fatherStatus')?.setValue('Living')"> Living
+        <input type="radio" value="Deceased" [checked]="scholarshipForm.get('fatherStatus')?.value === 'Deceased'" (change)="scholarshipForm.get('fatherStatus')?.setValue('Deceased')"> Deceased
+      </div>
+    
+      <label>Mother's Name:</label>
+      <input type="text" formControlName="motherName"><br>
+    
+      <label>Mother Status:</label>
+      <div>
+        <input type="radio" value="Living" [checked]="scholarshipForm.get('motherStatus')?.value === 'Living'" (change)="scholarshipForm.get('motherStatus')?.setValue('Living')"> Living
+        <input type="radio" value="Deceased" [checked]="scholarshipForm.get('motherStatus')?.value === 'Deceased'" (change)="scholarshipForm.get('motherStatus')?.setValue('Deceased')"> Deceased
+      </div>
+    
+      <label>Legal Guardian (if any):</label>
+      <input type="text" formControlName="guardian"><br>
+    
+      <label>Combined Annual Gross Income (₱):</label>
+      <input type="number" formControlName="combinedIncome"><br>
+    
+      <label>Proof of Income:</label>
+<div>
+  <input type="radio" value="ITR" formControlName="proofOfIncome"> ITR
+  <input type="radio" value="Certificate of Indigency" formControlName="proofOfIncome"> Certificate of Indigency
+  <input type="radio" value="BIR Certification" formControlName="proofOfIncome"> BIR Certification
+</div>
+
+<label>RA 7687 Applicant?</label>
+<div>
+  <input type="radio" value="Yes" formControlName="isRA7687"> Yes
+  <input type="radio" value="No" formControlName="isRA7687"> No
+</div>
+
+    
+      <!-- III. EDUCATIONAL BACKGROUND -->
+      <h3>III. EDUCATIONAL BACKGROUND</h3>
+      <label>Senior High School:</label>
+      <input type="text" formControlName="seniorHighSchool"><br>
+    
+      <label>School Address:</label>
+      <input type="text" formControlName="schoolAddress"><br>
+    
+      <label>School Type:</label>
+<div>
+  <input type="radio" value="Public" formControlName="schoolType"> Public
+  <input type="radio" value="Private" formControlName="schoolType"> Private
+</div>
+
+<label>Track and Strand:</label>
+<div>
+  <input type="radio" value="STEM" formControlName="strand"> STEM
+  <input type="radio" value="Non-STEM" formControlName="strand"> Non-STEM
+</div>
+
+<label>Ranking in Graduating Class:</label>
+<div>
+  <input type="radio" value="Top 5% (Non-STEM)" formControlName="ranking"> Top 5% (Non-STEM)
+  <input type="radio" value="STEM Strand" formControlName="ranking"> STEM Strand
+</div>
+
+    
+      <label>Year Graduated or Expected to Graduate:</label>
+      <input type="text" formControlName="yearGraduated"><br>
+    
+      <label>GWA:</label>
+      <input type="number" step="0.01" formControlName="gwa"><br>
+    
+      <label>Awards/Honors Received (if any):</label>
+      <input type="text" formControlName="awardsReceived"><br>
+    
+      <!-- IV. SCHOLARSHIP DETAILS -->
+      <h3>IV. SCHOLARSHIP DETAILS</h3>
+      <label>Type of Scholarship Applied For:</label>
+      <div>
+        <input type="radio" value="RA 7687" formControlName="scholarshipType"> RA 7687
+        <input type="radio" value="Merit Scholarship Program" formControlName="scholarshipType"> Merit Scholarship Program
+      </div>
+      
+    
+      <label>Priority S&T Course Applied For:</label>
+      <input type="text" formControlName="course"><br>
+    
+      <label>Preferred DOST-Recognized HEI:</label>
+      <input type="text" formControlName="heiName"><br>
+    
+      <!-- V. HEALTH & CHARACTER INFORMATION -->
+      <h3>V. HEALTH & CHARACTER INFORMATION</h3>
+      <label>Are you in good health?</label>
+      <div>
+        <input type="radio" value="Yes" formControlName="goodHealth"> Yes
+        <input type="radio" value="No" formControlName="goodHealth"> No
+      </div>
+      
+      <label>Do you have a Certificate of Good Moral Character?</label>
+      <div>
+        <input type="radio" value="Yes" formControlName="goodMoral"> Yes
+        <input type="radio" value="No" formControlName="goodMoral"> No
+      </div>
+      
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>I certify that the information provided is true and correct. I understand that any misrepresentation will be grounds for disqualification. I also authorize DOST-SEI to verify the information herein.</p>
+
+      <label for="signature">Signature of Applicant:</label>
+      <input type="file" id="signature" formControlName="applicantSignature" (change)="onFileChange('signature', $event)">
+
+    
+      <label>Declaration Date:</label>
+      <input type="text" formControlName="declarationDate" value="{{currentDate}}" readonly><br>
+    <!-- VII. ATTACHED DOCUMENTS CHECKLIST -->
+      <h3>VII. ATTACHED DOCUMENTS CHECKLIST</h3>
+      <label><input type="checkbox" [checked]="checklist.form"> DOST-SEI Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.moral"> Certificate of Good Moral Character</label>
+      <input type="file" (change)="onFileChange('moral', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.health"> Certificate of Good Health (from licensed physician)</label>
+      <input type="file" (change)="onFileChange('health', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.principal"> Principal’s Certification (STEM or ranking)</label>
+      <input type="file" (change)="onFileChange('principal', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.birth"> PSA Birth Certificate</label>
+      <input type="file" (change)="onFileChange('birth', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.photo"> Two (2) recent 1x1 or 2x2 ID photos</label>
+      <input type="file" (change)="onFileChange('photo', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.income"> Parent’s/Guardian’s ITR or Certificate of Indigency</label>
+      <input type="file" (change)="onFileChange('income', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="checklist.grades"> School Records (Form 137, Report Card)</label>
+      <input type="file" (change)="onFileChange('grades', $event)"><br><br>
+
+      <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>
+    </form>
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

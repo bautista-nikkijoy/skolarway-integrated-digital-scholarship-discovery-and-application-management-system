@@ -1,0 +1,92 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/PSHS Grade 7 Scholarship National Competitive Examination.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">PSHS Grade 7 Scholarship National Competitive Examination</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Free tuition and laboratory fees</li>
+            <li>Monthly stipend</li>
+            <li>Free loan of textbooks</li>
+            <li>Uniform and transportation subsidy (as applicable)</li>
+            <li>Living allowance for low-income families</li>
+            <li>Dormitory (in select campuses)</li>
+            <li>Access to advanced STEM curriculum</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a Filipino citizen</li>
+            <li>Currently enrolled in Grade 6</li>
+            <li>Must belong to the top 10% of the graduating class or must have a final grade of 85% or higher in Science and Math</li>
+            <li>Must be in good health and fit to undergo a rigorous academic program</li>
+            <li>Must not have taken the NCE previously</li>
+            <li>Must not have applied for admission to PSHS through any backdoor or special admission scheme</li>
+          </ul>
+        </div>
+      </div>
+
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed NCE Application Form</li>
+            <li>Certificate of Academic Ranking (or certified grades)</li>
+            <li>Certified copy of birth certificate</li>
+            <li>Two recent 1×1 ID photos</li>
+            <li>Proof of income (for stipend and subsidy eligibility)</li>
+            <li>Valid school ID or equivalent document</li>
+          
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    
+    <ion-button class="apply-button" href="/pshsaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

@@ -1,0 +1,121 @@
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+
+
+  <div class="notifications-header">
+    <h2>Notifications</h2>
+    <div class="toggle-buttons">
+      <button 
+        class="toggle-button" 
+        [class.active]="filter === 'ALL'" 
+        (click)="setFilter('ALL')">ALL</button>
+      <button 
+        class="toggle-button" 
+        [class.active]="filter === 'UNREAD'" 
+        (click)="setFilter('UNREAD')">UNREAD</button>
+    </div>
+  </div>
+  
+  <div class="notifications-section">
+    <div 
+      *ngFor="let note of filteredNotifications" 
+      class="notification-item" 
+      [class.unread]="note.unread"
+      (click)="markAsRead(note)"
+    >
+      <img [src]="note.logo" alt="Logo" class="notification-logo">
+      <div class="notification-content">
+        <p class="notification-message">{{ note.message }}</p>
+        <span class="notification-time">{{ note.time }}</span>
+      </div>
+      <div *ngIf="note.unread" class="unread-dot"></div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Custom Footer Navigation -->
+<div class="custom-footer">
+  <a class="tab-button" routerLink="/home" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="home-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Home</span>
+  </a>
+
+  <a class="tab-button" routerLink="/notifications" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Notifications</span>
+  </a>
+
+  <a class="tab-button" routerLink="/messages" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="mail-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Messages</span>
+  </a>
+
+  <a class="tab-button" routerLink="/profile" routerLinkActive="active">
+    <div class="icon-wrapper">
+      <ion-icon name="person-outline"></ion-icon>
+    </div>
+    <span class="tab-label">Profile</span>
+  </a>
+</div>

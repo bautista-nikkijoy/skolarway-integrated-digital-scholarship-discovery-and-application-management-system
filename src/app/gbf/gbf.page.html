@@ -1,0 +1,90 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/GBF teachSTEM College Scholarship.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">GBF teachSTEM College Scholarship</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full tuition and other school fees (for partner schools)</li>
+            <li>Fixed monthly allowance</li>
+            <li>Book and instructional materials allowance</li>
+            <li>Professional development training (STEM-focused)</li>
+            <li>Opportunities for community engagement and mentoring</li>
+            <li>Priority for GBF employment and partner networks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a Filipino citizen</li>
+            <li>Must be enrolled or enrolling in a Bachelor's degree in Education major in Science, Mathematics, Technology or related STEM areas</li>
+            <li>Committed to teaching in public K–12 schools after graduation</li>
+            <li>With good academic standing (GWA varies per program, typically ≥ 85%)</li>
+            <li>Must have no disciplinary record</li>
+            <li>Must demonstrate leadership potential and community involvement</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed online application form</li>
+            <li>Transcript of Records or copy of grades</li>
+            <li>Certificate of Enrollment (if currently enrolled)</li>
+            <li>Recommendation letters</li>
+            <li>Proof of income or Certificate of Indigency (if applicable)</li>
+            <li>Short essay or video answering specific application questions</li>
+            <li>Valid ID and 2×2 photo</li>
+          
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    
+    <ion-button class="apply-button" href="/gbfaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

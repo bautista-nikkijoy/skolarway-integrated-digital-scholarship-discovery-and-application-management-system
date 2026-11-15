@@ -1,0 +1,86 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/Pampanga Chamber of Commerce and Industry .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Pampanga Chamber of Commerce and Industry</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Interest‑Free Loan Assistance: Awarded to qualifying micro‑entrepreneurs to help cover start‑up or operating capital (47 enterprises served as of April 2025) Pampanga Chamber.</li>
+            <li>Entrepreneurship Training & Workshops: Capacity‑building seminars on business planning, marketing, and finance.</li>
+            <li>Networking & Mentorship: Access to regular mixers, trade missions, and one‑on‑one guidance from established business leaders.</li>
+            <li>Advocacy & Policy Support: Representation in local and national policy discussions to protect and advance MSME interests.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Must be a bona fide Pampanga resident operating a micro‑ or small‑scale enterprise. </li>
+            <li>Business must be formally registered or in the process of registration.</li>
+            <li>Active membership (or willingness to join) in PamCham.​</li>
+          </ul>
+        </div>
+      </div>
+
+
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed PamCham Assistance Application Form.</li>
+            <li>Proof of business registration (DTI/SEC/Cooperative).</li>
+            <li>Barangay Certificate of Residency.</li>
+            <li>Brief business proposal or project plan.</li>
+            <li>Latest financial statements or cash‑flow projections.</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+    <ion-button class="apply-button" href="/chamberaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

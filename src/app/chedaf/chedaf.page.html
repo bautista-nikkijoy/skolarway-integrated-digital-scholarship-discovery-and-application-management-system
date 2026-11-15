@@ -1,0 +1,178 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/CHED.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">CHED Merit Scholarship Program (CMSP) Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+
+      <label>Full Name:</label>
+      <input type="text" formControlName="fullName" [class.invalid]="scholarshipForm.get('fullName')?.invalid && scholarshipForm.get('fullName')?.touched"><br>
+      <div *ngIf="scholarshipForm.get('fullName')?.invalid && scholarshipForm.get('fullName')?.touched" class="error-message">Full Name is required.</div>
+
+      <label>Sex:</label>
+      <div>
+        <input type="radio" value="Male" [checked]="scholarshipForm.get('sex')?.value === 'Male'" (change)="scholarshipForm.get('sex')?.setValue('Male')"> Male
+        <input type="radio" value="Female" [checked]="scholarshipForm.get('sex')?.value === 'Female'" (change)="scholarshipForm.get('sex')?.setValue('Female')"> Female<br>
+      </div>
+      <div *ngIf="scholarshipForm.get('sex')?.invalid && scholarshipForm.get('sex')?.touched" class="error-message">Sex is required.</div>
+
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+      <div *ngIf="scholarshipForm.get('birthDate')?.invalid && scholarshipForm.get('birthDate')?.touched" class="error-message">Birth Date is required.</div>
+
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="placeOfBirth"><br>
+
+      <label>Civil Status:</label>
+      <div>
+        <input type="radio" value="Single" [checked]="scholarshipForm.get('civilStatus')?.value === 'Single'" (change)="scholarshipForm.get('civilStatus')?.setValue('Single')"> Single
+        <input type="radio" value="Married" [checked]="scholarshipForm.get('civilStatus')?.value === 'Married'" (change)="scholarshipForm.get('civilStatus')?.setValue('Married')"> Married
+        <input type="radio" value="Others" [checked]="scholarshipForm.get('civilStatus')?.value === 'Others'" (change)="scholarshipForm.get('civilStatus')?.setValue('Others')"> Others<br>
+      </div>
+      <div *ngIf="scholarshipForm.get('civilStatus')?.invalid && scholarshipForm.get('civilStatus')?.touched" class="error-message">Civil Status is required.</div>
+
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+      <div *ngIf="scholarshipForm.get('contactNumber')?.invalid && scholarshipForm.get('contactNumber')?.touched" class="error-message">Contact Number is required.</div>
+
+      <label>Email Address:</label>
+      <input type="email" formControlName="emailAddress"><br>
+      <div *ngIf="scholarshipForm.get('emailAddress')?.invalid && scholarshipForm.get('emailAddress')?.touched" class="error-message">Valid Email is required.</div>
+
+      <label>Home Address:</label>
+      <input type="text" formControlName="homeAddress"><br>
+      <div *ngIf="scholarshipForm.get('homeAddress')?.invalid && scholarshipForm.get('homeAddress')?.touched" class="error-message">Home Address is required.</div>
+
+      <h3>II. FAMILY BACKGROUND</h3>
+      <label>Father's Name:</label>
+      <input type="text" formControlName="fatherName"><br>
+      <div *ngIf="scholarshipForm.get('fatherName')?.invalid && scholarshipForm.get('fatherName')?.touched" class="error-message">Father's Name is required.</div>
+
+      <label>Father's Occupation:</label>
+      <input type="text" formControlName="fatherOccupation"><br>
+      <div *ngIf="scholarshipForm.get('fatherOccupation')?.invalid && scholarshipForm.get('fatherOccupation')?.touched" class="error-message">Father's Occupation is required.</div>
+
+      <label>Mother's Name:</label>
+      <input type="text" formControlName="motherName"><br>
+      <div *ngIf="scholarshipForm.get('motherName')?.invalid && scholarshipForm.get('motherName')?.touched" class="error-message">Mother's Name is required.</div>
+
+      <label>Mother's Occupation:</label>
+      <input type="text" formControlName="motherOccupation"><br>
+      <div *ngIf="scholarshipForm.get('motherOccupation')?.invalid && scholarshipForm.get('motherOccupation')?.touched" class="error-message">Mother's Occupation is required.</div>
+
+      <label>Combined Annual Gross Income (₱):</label>
+      <input type="number" formControlName="combinedIncome"><br>
+      <div *ngIf="scholarshipForm.get('combinedIncome')?.invalid && scholarshipForm.get('combinedIncome')?.touched" class="error-message">Combined Income is required.</div>
+
+      <h3>III. EDUCATIONAL BACKGROUND</h3>
+      <label>Senior High School Graduated From:</label>
+      <input type="text" formControlName="seniorHighSchool"><br>
+      <div *ngIf="scholarshipForm.get('seniorHighSchool')?.invalid && scholarshipForm.get('seniorHighSchool')?.touched" class="error-message">Required.</div>
+
+      <label>Address of School:</label>
+      <input type="text" formControlName="schoolAddress"><br>
+      <div *ngIf="scholarshipForm.get('schoolAddress')?.invalid && scholarshipForm.get('schoolAddress')?.touched" class="error-message">Required.</div>
+
+      <label>General Weighted Average (GWA):</label>
+      <input type="number" step="0.01" formControlName="gwa"><br>
+      <div *ngIf="scholarshipForm.get('gwa')?.invalid && scholarshipForm.get('gwa')?.touched" class="error-message">GWA is required.</div>
+
+      <label>Full Merit (96% and above)</label>
+      <input type="checkbox" formControlName="fullMerit"><br>
+
+      <label>Half Merit (93%–95%)</label>
+      <input type="checkbox" formControlName="halfMerit"><br>
+
+      <label>Year Graduated:</label>
+      <input type="text" formControlName="yearGraduated"><br>
+      <div *ngIf="scholarshipForm.get('yearGraduated')?.invalid && scholarshipForm.get('yearGraduated')?.touched" class="error-message">Required.</div>
+
+      <label>Awards/Honors Received (if any):</label>
+      <input type="text" formControlName="awardsReceived"><br>
+
+      <h3>IV. PREFERRED HEI AND COURSE</h3>
+      <label>Name of Higher Education Institution (HEI):</label>
+      <input type="text" formControlName="heiName"><br>
+      <div *ngIf="scholarshipForm.get('heiName')?.invalid && scholarshipForm.get('heiName')?.touched" class="error-message">HEI Name is required.</div>
+
+      <label>Course/Program:</label>
+      <input type="text" formControlName="course"><br>
+      <div *ngIf="scholarshipForm.get('course')?.invalid && scholarshipForm.get('course')?.touched" class="error-message">Course is required.</div>
+
+      <label>Type of HEI:</label>
+      <div>
+        <input type="radio" value="Public" [checked]="scholarshipForm.get('heiType')?.value === 'Public'" (change)="scholarshipForm.get('heiType')?.setValue('Public')"> Public
+        <input type="radio" value="Private" [checked]="scholarshipForm.get('heiType')?.value === 'Private'" (change)="scholarshipForm.get('heiType')?.setValue('Private')"> Private<br>
+      </div>
+      <div *ngIf="scholarshipForm.get('heiType')?.invalid && scholarshipForm.get('heiType')?.touched" class="error-message">Required.</div>
+
+      <label>Is your chosen HEI CHED-recognized?</label>
+      <div>
+        <input type="radio" value="Yes" [checked]="scholarshipForm.get('isChedRecognized')?.value === 'Yes'" (change)="scholarshipForm.get('isChedRecognized')?.setValue('Yes')"> Yes
+        <input type="radio" value="No" [checked]="scholarshipForm.get('isChedRecognized')?.value === 'No'" (change)="scholarshipForm.get('isChedRecognized')?.setValue('No')"> No
+      </div>
+      <div *ngIf="scholarshipForm.get('isChedRecognized')?.invalid && scholarshipForm.get('isChedRecognized')?.touched" class="error-message">Required.</div>
+
+      <!-- V. DECLARATION -->
+      <h3>V. DECLARATION</h3>
+      <p>I hereby certify that the information provided in this application is true and correct. I understand that any false or misleading information may result in the disqualification of my application. I also declare that I am not a recipient of any other government-funded financial assistance.</p>
+
+
+      <label for="signature">Signature of Applicant:</label>
+      <input type="file" id="signature" formControlName="applicantSignature" (change)="onFileChange('signature', $event)">
+
+
+
+      <label>Date:</label>
+      <input type="date" formControlName="declarationDate" [value]="today" readonly><br>
+
+      <!-- VI. CHECKLIST -->
+      <h3>VI. CHECKLIST OF REQUIREMENTS</h3>
+      <label><input type="checkbox" [checked]="checklist.grades"> Certified True Copy of Grades</label>
+      <input type="file" (change)="onFileChange('grades', $event)"><br>
+
+      <label><input type="checkbox" [checked]="checklist.moral"> Certificate of Good Moral Character</label>
+      <input type="file" (change)="onFileChange('moral', $event)"><br>
+
+      <label><input type="checkbox" [checked]="checklist.income"> Proof of Income</label>
+      <input type="file" (change)="onFileChange('income', $event)"><br>
+
+      <label><input type="checkbox" [checked]="checklist.birth"> Birth Certificate</label>
+      <input type="file" (change)="onFileChange('birth', $event)"><br>
+
+      <label><input type="checkbox" [checked]="checklist.photo"> Recent 2×2 Photo</label>
+      <input type="file" (change)="onFileChange('photo', $event)"><br>
+
+      <label><input type="checkbox" [checked]="checklist.form"> Duly Accomplished Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br><br>
+
+      <ion-button type="submit" (click)="onSubmit()">Submit</ion-button>
+
+    </form>
+  </div>
+</ion-content>

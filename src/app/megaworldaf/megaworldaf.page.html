@@ -1,0 +1,198 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/Megaworld Foundation Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Megaworld Foundation Scholarship Application Form</h2>
+
+    <form [formGroup]="megaworldForm" (ngSubmit)="onSubmit()">
+
+      <!-- Academic Year -->
+      <h3>Academic Year</h3>
+      <input type="text" formControlName="academicYear"><br>
+    
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+      <label for="fullName">Full Name (Last, First, Middle):</label>
+      <input id="fullName" type="text" formControlName="fullName"><br>
+    
+      <label>Sex:</label>
+      <div>
+        <label><input type="radio" formControlName="sex" value="Male"> Male</label>
+        <label><input type="radio" formControlName="sex" value="Female"> Female</label>
+      </div>
+      
+    
+      <label for="birthDate">Date of Birth:</label>
+      <input id="birthDate" type="date" formControlName="birthDate"><br>
+    
+      <label for="placeOfBirth">Place of Birth:</label>
+      <input id="placeOfBirth" type="text" formControlName="placeOfBirth"><br>
+    
+      <label>Citizenship:</label>
+      <label><input type="radio" formControlName="citizenship" value="Filipino"> Filipino</label><br>
+    
+      <label>Civil Status:</label>
+      <div>
+        <label><input type="radio" formControlName="civilStatus" value="Single"> Single</label>
+        <label><input type="radio" formControlName="civilStatus" value="Married"> Married</label>
+      </div>
+    
+      <label for="contactNumber">Contact Number:</label>
+      <input id="contactNumber" type="text" formControlName="contactNumber"><br>
+    
+      <label for="email">Email Address:</label>
+      <input id="email" type="email" formControlName="email"><br>
+    
+      <label for="address">Permanent Home Address:</label>
+      <input id="address" type="text" formControlName="address"><br>
+    
+      <!-- II. FAMILY INFORMATION -->
+      <h3>II. FAMILY INFORMATION</h3>
+      <label for="fatherName">Father’s Name:</label>
+      <input id="fatherName" type="text" formControlName="fatherName">
+      <label><input type="radio" formControlName="fatherStatus" value="Living"> Living</label>
+      <label><input type="radio" formControlName="fatherStatus" value="Deceased"> Deceased</label><br>
+    
+      <label for="fatherOccupation">Occupation:</label>
+      <input id="fatherOccupation" type="text" formControlName="fatherOccupation"><br>
+    
+      <label for="motherName">Mother’s Name:</label>
+      <input id="motherName" type="text" formControlName="motherName">
+      <label><input type="radio" formControlName="motherStatus" value="Living"> Living</label>
+      <label><input type="radio" formControlName="motherStatus" value="Deceased"> Deceased</label><br>
+    
+      <label for="motherOccupation">Occupation:</label>
+      <input id="motherOccupation" type="text" formControlName="motherOccupation"><br>
+    
+      <label for="guardian">Guardian (if applicable):</label>
+      <input id="guardian" type="text" formControlName="guardian"><br>
+    
+      <label for="siblings">Number of Siblings:</label>
+      <input id="siblings" type="number" formControlName="siblings"><br>
+    
+      <label for="familyIncome">Combined Annual Gross Family Income (₱):</label>
+      <input id="familyIncome" type="number" formControlName="familyIncome"><br>
+    
+      <!-- III. EDUCATIONAL BACKGROUND -->
+      <h3>III. EDUCATIONAL BACKGROUND</h3>
+      <label for="lastSchool">Last School Attended / Currently Enrolled School:</label>
+      <input id="lastSchool" type="text" formControlName="lastSchool"><br>
+    
+      <label>Level:</label><br>
+      <div>
+        <label><input type="radio" formControlName="level" value="Incoming Freshman"> Incoming Freshman</label>
+        <label><input type="radio" formControlName="level" value="1st Year"> 1st Year</label>
+        <label><input type="radio" formControlName="level" value="2nd Year"> 2nd Year</label>
+        <label><input type="radio" formControlName="level" value="3rd Year"> 3rd Year</label>
+        <label><input type="radio" formControlName="level" value="4th Year"> 4th Year</label>
+      </div>
+      
+    
+      <label>School Type:</label>
+      <label><input type="radio" formControlName="schoolType" value="Public"> Public</label>
+      <label><input type="radio" formControlName="schoolType" value="Private"> Private</label><br>
+    
+      <label>Partner School?</label>
+      <label><input type="radio" formControlName="partnerSchool" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="partnerSchool" value="No"> No</label><br>
+    
+      <label>Course Enrolled/To Enroll:</label><br>
+      <label>
+        <input type="radio" formControlName="course" value="Engineering"> Engineering
+      </label>
+      <span *ngIf="megaworldForm.get('course')?.value === 'Engineering'">
+        (Specify: <input type="text" formControlName="engineeringSpec">)
+      </span><br>
+
+      <label><input type="radio" formControlName="course" value="Architecture"> Architecture</label><br>
+      <label><input type="radio" formControlName="course" value="IT"> Information Technology / Computer Science</label><br>
+      <label><input type="radio" formControlName="course" value="Accountancy"> Accountancy</label><br>
+      <label><input type="radio" formControlName="course" value="Business"> Management / Business</label><br>
+      <label><input type="radio" formControlName="course" value="Marketing"> Communication / Marketing</label><br>
+      <label><input type="radio" formControlName="course" value="Education"> Education</label><br>
+
+      <label for="gwa">GWA (Latest):</label>
+      <input id="gwa" type="text" formControlName="gwa"><br>
+    
+      <!-- IV. SCHOLARSHIP INFORMATION -->
+      <h3>IV. SCHOLARSHIP INFORMATION</h3>
+      <label>Have you previously applied to Megaworld Foundation?</label>
+      <label><input type="radio" formControlName="appliedBefore" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="appliedBefore" value="No"> No</label><br>
+    
+      <label>Are you currently a scholar of any other organization?</label>
+      <label><input type="radio" formControlName="otherScholar" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="otherScholar" value="No"> No</label><br>
+    
+      <label for="otherScholarDetails">If yes, please specify:</label>
+      <input id="otherScholarDetails" type="text" formControlName="otherScholarDetails"><br>
+    
+      <label>Are you open to employment with Megaworld or its affiliates after graduation?</label>
+      <label><input type="radio" formControlName="employmentInterest" value="Yes"> Yes</label>
+      <label><input type="radio" formControlName="employmentInterest" value="No"> No</label><br>
+    
+      <h3>IV. DOCUMENT CHECKLIST</h3>
+      <label><input type="checkbox" [checked]="docs['form']"> Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['income']"> Parent’s ITR / Indigency</label>
+      <input type="file" (change)="onFileChange('income', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['grades']"> Latest Grade 12 Report Card</label>
+      <input type="file" (change)="onFileChange('grades', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birth']"> PSA Birth Certificate</label>
+      <input type="file" (change)="onFileChange('birth', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['photo']"> Recent 2x2 ID Photo</label>
+      <input type="file" (change)="onFileChange('photo', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['enrollment']">Proof of enrollment or admission (for incoming freshmen)</label>
+      <input type="file" (change)="onFileChange('enrollment', $event)"><br>
+
+    
+      <!-- VI. DECLARATION -->
+      <h3>VI. DECLARATION</h3>
+      <p>
+        I declare that all the information given in this application is true, accurate, and complete.
+        I understand that providing false or misleading information may result in the disqualification of my application or revocation of my scholarship.
+      </p>
+    
+      <label for="signature">Signature of Applicant:</label>
+      <input id="signature" type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label for="declarationDate">Date:</label>
+      <input id="declarationDate" type="date" formControlName="declarationDate"><br><br>
+    
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    </form>
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

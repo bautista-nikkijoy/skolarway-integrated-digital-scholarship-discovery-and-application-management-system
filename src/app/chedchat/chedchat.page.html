@@ -1,0 +1,132 @@
+ 
+ <ion-content class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+   <ion-buttons slot="start">
+     <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+   </ion-buttons>
+ 
+   <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+   </ion-buttons>
+ </ion-toolbar>
+ 
+ <!-- SkolarWay Icon and Text -->
+ <div class="skolarway-container">
+   <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+   <span class="skolarway-text">SkolarWay</span>
+ </div>
+ 
+ 
+ <!-- Back Button Top-Right -->
+ 
+ <div class="top-back-button" routerLink="/messages">
+   <ion-icon name="return-up-back" class="back-icon"></ion-icon>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- Message Thread -->
+ <div class="message-thread">
+   <!-- DOST Logo Above Chat Title -->
+   <div class="dost-logo-wrapper">
+     <img src="assets/images/CHED.PNG" alt="DOST-SEI Logo" class="dost-logo">
+   </div>
+ 
+   <h4 class="chat-title">CHED Merit Scholarship Program (CMSP)</h4>
+ 
+   <!-- User Message -->
+   <div class="chat-row user">
+     <div class="chat-bubble user-msg">
+      Hello! I would like to ask when the results for the scholarship will be released. I’m really looking forward to hearing the outcome.
+     </div>
+     <img src="/assets/images/Bautista.png" class="chat-icon">
+   </div>
+ 
+   <!-- Admin Replies -->
+   <div class="chat-row admin" *ngFor="let message of dostChatMessages">
+     <img src="assets/images/CHED.PNG" class="chat-icon">
+     <div class="chat-bubble admin-msg">
+       {{ message }}
+     </div>
+   </div>
+ 
+   <!-- User Thanks -->
+   <div class="chat-row user">
+     <div class="chat-bubble user-msg">
+       Thank you so much!
+     </div>
+     <img src="/assets/images/Bautista.png" class="chat-icon">
+   </div>
+ </div>
+ 
+ 
+ <!-- Message Input Fixed Above Footer -->
+ <div class="message-input-wrapper">
+   <input type="text" placeholder="Enter your message" class="text-message" />
+   <ion-icon name="send" class="send-icon"></ion-icon>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- Custom Footer Navigation -->
+ <div class="custom-footer">
+   <a class="tab-button" routerLink="/home" routerLinkActive="active">
+     <div class="icon-wrapper">
+       <ion-icon name="home-outline"></ion-icon>
+     </div>
+     <span class="tab-label">Home</span>
+   </a>
+ 
+   <a class="tab-button" routerLink="/notifications" routerLinkActive="active">
+     <div class="icon-wrapper">
+       <ion-icon name="notifications-outline"></ion-icon>
+     </div>
+     <span class="tab-label">Notifications</span>
+   </a>
+ 
+   <a class="tab-button" routerLink="/messages" routerLinkActive="active">
+     <div class="icon-wrapper">
+       <ion-icon name="mail-outline"></ion-icon>
+     </div>
+     <span class="tab-label">Messages</span>
+   </a>
+ 
+   <a class="tab-button" routerLink="/profile" routerLinkActive="active">
+     <div class="icon-wrapper">
+       <ion-icon name="person-outline"></ion-icon>
+     </div>
+     <span class="tab-label">Profile</span>
+   </a>
+ </div>
+ </ion-content>

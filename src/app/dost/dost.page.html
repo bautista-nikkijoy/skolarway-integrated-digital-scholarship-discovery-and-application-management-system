@@ -1,0 +1,93 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/DOST-SEI Undergraduate Scholarship .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">DOST-SEI Undergraduate Scholarship</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Tuition and other school fees: ₱40,000/year</li>
+            <li>Book Allowance: ₱10,000/year</li>
+            <li>Monthly Living Allowance: ₱7,000/month</li>
+            <li>Transportation Allowance (for those studying outside home region)</li>
+            <li>Thesis Allowance: ₱10,000</li>
+            <li>Graduation Clothing Allowance: ₱1,000</li>
+            <li>Group Health and Accident Insurance</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Natural-born Filipino citizen</li>
+            <li>Graduating Grade 12 student from a recognized school</li>
+            <li>Must belong to the STEM strand (for RA 7687 and Merit) or top 5% of the graduating class (for non-STEM)</li>
+            <li>Must be in good health and of good moral character</li>
+            <li>Annual family income ≤ ₱400,000</li>
+            <li>Must pursue a DOST-SEI priority S&T course at a recognized university</li>
+            <li>RA 7687 applicants must have a family gross income not exceeding the DOST-set cut-off</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>DOST-SEI Application Form</li>
+            <li>Certificate of good moral character</li>
+            <li>Certificate of Good Health</li>
+            <li>Principal’s Certification (ranking or STEM strand)</li>
+            <li>Birth Certificate (PSA copy)</li>
+            <li>Recent 2×2 ID photo</li>
+            <li>Parent’s/Guardian’s Income Tax Return (ITR) or Certificate of Indigency</li>
+            <li>School records (Form 137, report card, etc.)</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+    
+
+    <ion-button class="apply-button" href="/dostaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

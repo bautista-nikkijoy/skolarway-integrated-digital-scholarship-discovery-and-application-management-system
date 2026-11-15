@@ -1,0 +1,89 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/La Verdad Christian College (LVCC).PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">La Verdad Christian College (LVCC)</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Free tuition and miscellaneous fees</li>
+            <li>Free digital systems access</li>
+            <li>Free books and access to the digital library</li>
+            <li>Free school and PE uniforms</li>
+            <li>Free lunch meals​</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Open to elementary, junior high, senior high, college students, and transferees</li>
+            <li>Must pass the qualifying examination and academic interview</li>
+            <li>Demonstrate academic potential and commitment to studies​</li>
+
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Completed scholarship application form </li>
+            <li>Valid school records (e.g., report cards, transcripts) </li>
+            <li>Proof of identity (e.g., birth certificate, valid ID)</li>
+            <li>Recent 2x2 ID photo</li>
+            <li>Other documents as specified by LVCC during the application process</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/laverdadaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

@@ -1,0 +1,173 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/SM Foundation College Scholarship.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title"> SM Foundation College Scholarship Application Form</h2>
+
+    <form [formGroup]="tesdaForm" (ngSubmit)="onSubmit()">
+
+      <!-- ACADEMIC YEAR -->
+      <h3>Academic Year</h3>
+      <input type="text" formControlName="academicYear"><br>
+    
+      <!-- I. APPLICANT INFORMATION -->
+      <h3>I. APPLICANT INFORMATION</h3>
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+    
+      <label>Sex:</label>
+      <input type="radio" value="Male" formControlName="sex"> Male
+      <input type="radio" value="Female" formControlName="sex"> Female<br>
+    
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+    
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+    
+      <label>Place of Birth:</label>
+      <input type="text" formControlName="placeOfBirth"><br>
+    
+      <label>Citizenship:</label>
+      <input type="radio" value="Filipino" formControlName="citizenship"> Filipino<br>
+    
+      <label>Civil Status:</label>
+      <input type="radio" value="Single" formControlName="civilStatus"> Single
+      <input type="radio" value="Married" formControlName="civilStatus"> Married<br>
+    
+      <label>Mobile Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+    
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+    
+      <label>Home Address:</label>
+      <input type="text" formControlName="address"><br>
+    
+      <!-- II. FAMILY BACKGROUND -->
+      <h3>II. FAMILY BACKGROUND</h3>
+      <label>Father’s Name:</label>
+      <input type="text" formControlName="fatherName">
+      <input type="radio" value="Living" formControlName="fatherStatus"> Living
+      <input type="radio" value="Deceased" formControlName="fatherStatus"> Deceased<br>
+
+
+    
+      <label>Occupation:</label>
+      <input type="text" formControlName="fatherOccupation"><br>
+    
+      <label>Mother’s Name:</label>
+      <input type="text" formControlName="motherName">
+      <input type="radio" value="Living" formControlName="motherStatus"> Living
+      <input type="radio" value="Deceased" formControlName="motherStatus"> Deceased<br>
+    
+      <label>Occupation:</label>
+      <input type="text" formControlName="motherOccupation"><br>
+    
+      <label>Guardian (if applicable):</label>
+      <input type="text" formControlName="guardian"><br>
+    
+      <label>Number of Family Members:</label>
+      <input type="number" formControlName="familyMembers"><br>
+    
+      <label>Total Annual Household Income (₱):</label>
+      <input type="number" formControlName="householdIncome"><br>
+    
+      <!-- III. EDUCATIONAL BACKGROUND -->
+      <h3>III. EDUCATIONAL BACKGROUND</h3>
+      <label>Senior High School Attended:</label>
+      <input type="text" formControlName="shs"><br>
+    
+      <label>Type of School:</label>
+      <input type="radio" value="Public" formControlName="schoolType"> Public
+      <input type="radio" value="Private with DepEd Voucher" formControlName="schoolType"> Private with DepEd Voucher<br>
+    
+      <label>Track and Strand:</label><br>
+      <input type="radio" value="ABM" formControlName="track"> ABM
+      <input type="radio" value="STEM" formControlName="track"> STEM
+      <input type="radio" value="HUMSS" formControlName="track"> HUMSS
+      <input type="radio" value="TVL" formControlName="track"> TVL
+      <input type="radio" value="GAS" formControlName="track"> GAS<br>
+    
+    
+      <label>Intended Course:</label><br>
+      <input type="radio" value="Engineering" formControlName="intendedCourse"> Engineering
+      <input type="radio" value="Business" formControlName="intendedCourse"> Business
+      <input type="radio" value="Health Sciences" formControlName="intendedCourse"> Health Sciences
+      <input type="radio" value="Education" formControlName="intendedCourse"> Education
+      <input type="radio" value="Arts and Humanities" formControlName="intendedCourse"> Arts and Humanities<br>
+    
+      <label>Preferred University:</label>
+      <input type="text" formControlName="preferredUniversity"><br>
+    
+      <label>Open to Part-Time Work:</label>
+      <input type="radio" value="Yes" formControlName="partTimeWork"> Yes
+      <input type="radio" value="No" formControlName="partTimeWork"> No<br>
+    
+      <label>Interested in Job Opportunities at SM Group:</label>
+      <input type="radio" value="Yes" formControlName="jobOpportunities"> Yes
+      <input type="radio" value="No" formControlName="jobOpportunities"> No<br>
+    
+      <!-- IV. DOCUMENT CHECKLIST -->
+      <h3>IV. DOCUMENT CHECKLIST</h3>
+      <label><input type="checkbox" [checked]="docs['form']"> Application Form</label>
+      <input type="file" (change)="onFileChange('form', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['incomeProof']"> Parent’s ITR / Indigency</label>
+      <input type="file" (change)="onFileChange('incomeProof', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['grades']"> Latest Grade 12 Report Card</label>
+      <input type="file" (change)="onFileChange('grades', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['birth']"> PSA Birth Certificate</label>
+      <input type="file" (change)="onFileChange('birth', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['photo']"> Recent 2x2 ID Photo</label>
+      <input type="file" (change)="onFileChange('photo', $event)"><br>
+    
+      <label><input type="checkbox" [checked]="docs['sketch']"> Sketch of Home to Nearest SM Mall</label>
+      <input type="file" (change)="onFileChange('sketch', $event)"><br>
+    
+      <!-- V. DECLARATION -->
+      <h3>V. DECLARATION</h3>
+      <p>I affirm that all the information given in this application is true and complete to the best of my knowledge. I understand that any false statement or misrepresentation may disqualify me from the scholarship.</p>
+    
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+    
+      <label>Date:</label>
+      <input type="date" formControlName="commitmentDate"><br><br>
+    
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    
+    </form>
+    
+    
+  </div>
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,71 @@
+ /* Global Styles */
+/* Ensure the entire ion-content uses the background */
+.whole {
+  --ion-background-color: #F3FBFB;
+  background: #F3FBFB;
+  height: 100vh;
+}
+
+/* Toolbar with light background */
+.custom-toolbar {
+  background: #F3FBFB; /* Same light background */
+  color: #272343;       /* Dark text for contrast */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Toolbar time display */
+.header-time {
+  font-size: 14px;
+  padding-left: 30px;
+  color: #272343;
+}
+
+/* Icons styled consistently */
+.battery-icon,
+.signal-icon,
+.wifi-icon {
+  font-size: 20px;
+  color: #272343;
+}
+
+.battery-icon {
+  padding-right: 30px;
+}
+
+.signal-icon,
+.wifi-icon {
+  padding-right: 10px;
+}
+
+
+
+.success-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .checkmark-wrapper {
+    animation: popIn 0.6s ease forwards;
+  }
+  
+  .checkmark-icon {
+    font-size: 100px;
+    color: #272343; // Green
+  }
+  
+  .success-message {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fadeInText 1s ease forwards;
+  }

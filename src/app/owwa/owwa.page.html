@@ -1,0 +1,91 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/Overseas Workers Welfare Administration .PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">Overseas Workers Welfare Administration</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Education for Development Scholarship Program (EDSP): Financial aid of up to ₱60,000 per school year for qualifying dependents who place among the top examinees of the DOST‑SEI pre‑qualifying exam, for both incoming freshmen and continuing college students Phil Scholar.</li>
+            <li>Congressional Migrant Workers Scholarship Program (CMWSP): Scholarship grants (up to ₱60,000/year) for active OFWs or their immediate descendants pursuing Science & Technology courses; includes a national qualifying exam by DOST‑SEI OWWA Scholarships.</li>
+            <li>OFW Dependent Scholarship Program (ODSP):Cash assistance of ₱20,000 per academic year for dependent children or siblings of active OWWA members enrolled (or planning to enroll) in any 4‑ or 5‑year baccalaureate course OWWA Scholarships.</li>
+            <li>Education and Livelihood Assistance Program (ELAP):Support for dependents of deceased OFW members to pursue vocational and livelihood training (amounts and terms vary by program).</li>
+          
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li> Must be an active OWWA member (OFW) or their child/sibling (single, no prior scholarship avails).</li>
+            <li>General income ceiling: family monthly income not exceeding USD 600 (≈ ₱34,000) for most dependent programs OWWA Scholarships.</li>
+            <li>Age limits: Incoming freshmen: ≤ 21 years old or Continuing students: ≤ 30 years old.​</li>
+            <li>Academic requirements: EDSP applicants must rank in the DOST‑SEI Top 1000 examinees or CMWSP & ODSP applicants must maintain a GWA ≥ 80% or equivalent and no failing grades.</li>
+            <li>Must enroll in a Philippine‑based college/university offering the qualified course.</li>
+          </ul>
+        </div>
+      </div>
+
+    
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished OWWA Scholarship Application Form</li>
+            <li>PSA Birth Certificate</li>
+            <li>Certificate of No Marriage (CENOMAR) or proof of single status (for dependents)</li>
+            <li>2×2 ID photo</li>
+            <li>Proof of relationship to OFW (e.g., OWWA Member ID)</li>
+            <li>Parent’s/Guardian’s Income Tax Return (ITR) or Certificate of Indigency</li>
+            <li>Academic records: Form 137/138 or certified transcript of grades (including Grade 9–11 for CMWSP) OWWA Scholarships.</li>
+            <li>Additional for CMWSP: Copy of OFW passport, proof of family income, and DOST‑SEI exam result.</li>
+            <li>Additional for ODSP: Proof of enrollment or admission in a 4–5‑year course.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    
+    <ion-button class="apply-button" href="/owwaaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

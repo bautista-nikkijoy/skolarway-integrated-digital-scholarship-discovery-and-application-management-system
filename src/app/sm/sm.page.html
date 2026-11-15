@@ -1,0 +1,105 @@
+
+
+
+
+<ion-content fullscreen class="whole">
+  <!-- Toolbar with Date, Battery, Signal, and Wifi -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+  
+    <ion-buttons slot="end">
+       <ion-icon name="cellular" class="signal-icon"></ion-icon>
+       <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+       <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- SkolarWay Icon and Text -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" /> <!-- Your SkolarWay logo image -->
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  
+  <!-- Back Icon below Battery -->
+  <div class="back-icon-container">
+    <a href="/home"> <!-- Replace "/home" with the correct path for your home page -->
+      <ion-icon name="home-outline" class="back-icon"></ion-icon>
+    </a>
+  </div>
+  
+
+  
+  <!-- Scholarship Details Section -->
+  <div class="scholarship-container">
+    <img src="assets/images/SM Foundation College Scholarship.PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">SM Foundation Scholarship</h2>
+
+    <div class="sections-wrapper">
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Benefits:</h3>
+          <ul>
+            <li>Full tuition subsidy</li>
+            <li>Monthly allowance</li>
+            <li>Part-time job opportunities during semestral and Christmas breaks</li>
+            <li>Exclusive job offers at SM Group of Companies after graduation</li>
+            <li>Academic and personal development activities</li>
+          </ul>
+        </div>
+      </div>
+  
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Eligibility Criteria:</h3>
+          <ul>
+            <li>Grade 12 public high school graduate</li>
+            <li>Private high school graduate with a DepEd voucher (must be Grade 10 completer in a public school)</li>
+            <li>General weighted average of at least 92%</li>
+            <li>Total household income must not exceed ₱150,000 per year</li>
+            <li>Must intend to enroll in any of the partner colleges/universities and in approved courses (business or STEM-related)</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Approved Courses:</h3>
+          <ul>
+            <li>BS in Accounting</li>
+            <li>BS in Information Technology / Computer Science</li>
+            <li>BS in Engineering (Civil, Mechanical, Electrical, Electronics, etc.)</li>
+            <li>BS in Elementary or Secondary Education</li>
+            <li>BS in Business Administration and related courses</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="whole-section">
+        <div class="section">
+          <h3>Requirements:</h3>
+          <ul>
+            <li>Accomplished application form</li>
+            <li>Parent’s or guardian’s latest Income Tax Return or Certificate of Indigency</li>
+            <li>Latest grade report</li>
+            <li>Birth Certificate</li>
+            <li> 2x2 ID photo</li>
+            <li> Sketch of home to nearest SM mall</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+    <ion-button class="apply-button" href="/smaf">Apply Now</ion-button>
+
+  </div>
+</ion-content>

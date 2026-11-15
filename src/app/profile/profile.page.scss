@@ -1,0 +1,377 @@
+.whole {
+  --background: #F3FBFB;
+  height: 100vh;
+  padding-bottom: 50px; /* Ensure footer is not overlapping content */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.custom-toolbar {
+  --background: #F3FBFB;
+  color: #272343;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 0px 0;
+  box-sizing: border-box;
+}
+
+.header-time {
+  font-size: 14px;
+  padding-left: 30px;
+  color: black;
+}
+
+.battery-icon,
+.signal-icon,
+.wifi-icon {
+  font-size: 20px;
+  color: black;
+}
+
+.battery-icon {
+  padding-right: 30px;
+}
+
+.signal-icon {
+  padding-right: 10px;
+}
+
+.wifi-icon {
+  padding-right: 10px;
+}
+
+.skolarway-container {
+  margin-top: 60px;
+  padding-left: 20px;
+  background-color: #F3FBFB;
+  display: flex;
+  align-items: center;
+}
+
+.skolarway-logo {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.skolarway-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #272343;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+  background-color: #f3fafa;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  margin-bottom: 16px;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 0;
+  color: #000;
+}
+
+.profile-role {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #777;
+  text-transform: uppercase;
+  margin-top: 2px; // Pulled it closer to the name
+  margin-bottom: 20px;
+}
+
+.action-card {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  ion-item {
+    --background: transparent;
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+    font-size: 15px;
+    color: #000;
+  }
+
+  ion-icon {
+    font-size: 20px;
+    color: #000;
+  }
+
+  /* On hover */
+  ion-item:hover {
+    background-color: #272343 !important;
+
+    ion-label,
+    ion-icon {
+      color: #ffffff !important;
+    }
+  }
+
+  /* On tap/click */
+  ion-item.ion-activated {
+    background-color: #272343 !important;
+
+    ion-label,
+    ion-icon {
+      color: #ffffff !important;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.custom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #272343;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    z-index: 999;
+  }
+  
+  .tab-button {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    text-decoration: none;  
+  }
+  
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    margin-top: 10px;
+  }
+  
+  .tab-button.active .icon-wrapper {
+    background-color: #fdd835;
+    transform: translateY(-20px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+  }
+  
+  .tab-label {
+    font-size: 12px;
+    margin-top: 4px;
+    color: transparent;
+    font-weight: 600;
+    display: block;
+    transition: color 0.3s ease;
+    transform: translateY(-16px); 
+  }
+  
+  .tab-button.active .tab-label {
+    color: white;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  .info-card {
+    position: relative;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+
+
+
+
+  .skolarway-alert .alert-message {
+  white-space: pre-line; /* Preserve new lines */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .custom-modal {
+  --width: 80%;
+  --max-width: 500px;
+  --height: 80%;
+  --max-height: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.info-modal-content {
+  background-color: #241f47;
+  color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+
+  /* Hide scrollbar across all browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.info-modal-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+h2, h3 {
+  margin-top: 1em;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+
+  li {
+    list-style: disc;
+    margin-bottom: 6px;
+  }
+}
+
+a {
+  color: #80d0ff;
+  text-decoration: underline;
+}

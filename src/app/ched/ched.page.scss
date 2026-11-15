@@ -1,0 +1,331 @@
+/* Global Styles */
+.whole {
+  --background: #F3FBFB;
+  height: 100vh;
+}
+
+.custom-toolbar {
+  background: #F3FBFB; /* Background color of the header */
+  color: #272343; /* Text color */
+  position: fixed; /* Fix the header to the top */
+  top: 0; /* Align it to the top */
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 10; /* Ensure it's above other content */
+  padding: 0px 0; /* Add some padding for better appearance */
+  box-sizing: border-box;
+}
+
+.header-time {
+  font-size: 14px;
+  padding-left: 30px;
+  color: black;
+}
+
+.battery-icon {
+  font-size: 20px;
+  padding-right: 30px;
+  color: black;
+}
+.signal-icon {
+  font-size: 20px;
+  padding-right: 10px;
+  color: black;
+}
+
+.wifi-icon {
+  font-size: 20px;
+  padding-right: 10px;
+  color: black;
+}
+
+.skolarway-container {
+  margin-top: 50px;
+  padding-left: 20px;
+  background-color: #F3FBFB;
+}
+
+.skolarway-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #272343; /* Custom color */
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* subtle shadow */
+  position: relative;
+  top: -18px; /* move text slightly up */
+  margin: 10px;
+}
+
+.skolarway-logo {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 10px; /* add space between text and logo */
+}
+
+.skolarway-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Back Icon Styling */
+.back-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -38px; 
+  padding-right: 40px;
+}
+
+.back-icon {
+  font-size: 20px;
+  color: #272343; /* Custom color */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+ion-content {
+  background-color: #F3FBFB !important;
+  min-height: 100vh;
+}
+
+ion-toolbar {
+  --background: #F3FBFB;
+}
+
+.scholarship-container {
+  padding: 10px;
+  margin-top: -4vw;
+  background-color: #F3FBFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: start;
+}
+
+/* Default for larger screens */
+.section {
+  width: 40vw; /* 40% of the viewport width */
+  margin-bottom: 10px;
+  padding: 8px 0;
+  margin-left: 20px; /* Move content to the right */
+}
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .section {
+    width: 60vw; /* 60% of the viewport width for smaller screens */
+    margin-left: 15px; /* Adjust margin to better fit the screen */
+  }
+}
+
+/* For mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .section {
+    width: 90vw; /* 90% of the viewport width for mobile devices */
+    margin-left: 10px; /* Reduce margin to fit content */
+  }
+}
+
+
+.logo-img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  object-fit: contain;
+}
+
+.scholarship-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  justify-content: center;
+  color: #272343;
+  margin-bottom: 10px;
+}
+
+.section h3 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #272343;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: none;
+  position: relative;
+}
+
+.section ul {
+  padding-right: 1vw;
+  margin: 0;
+}
+
+.section li {
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+  color: black;
+}
+
+.apply-button {
+  --background: #FFD803 !important;
+  --color: #000 !important;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: .5vw;
+  padding: 8px 16px;
+  display: inline-block;
+  text-align: center;
+  width: auto;
+  position: relative;
+  box-shadow: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.apply-button:hover {
+  --background: #FFCC00 !important; /* Slightly darker yellow on hover */
+  --color: #FFF !important; /* Change text color to white */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  .header-time {
+    font-size: 12px;
+    padding-left: 15px;
+  }
+
+  .battery-icon, .signal-icon, .wifi-icon {
+    font-size: 18px;
+    padding-right: 8px;
+  }
+
+  .skolarway-text {
+    font-size: 1rem;
+    top: -10px;
+  }
+
+  .skolarway-logo {
+    width: 40px;
+  }
+
+  .skolarway-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  ion-toolbar {
+    padding: 0 10px;
+  }
+
+  .apply-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    position: relative;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  .header-time {
+    font-size: 13px;
+  }
+
+  .battery-icon, .signal-icon, .wifi-icon {
+    font-size: 19px;
+  }
+
+  .skolarway-text {
+    font-size: 1.1rem;
+  }
+
+  .skolarway-logo {
+    width: 45px;
+  }
+
+ 
+
+  .apply-button {
+    width: 100%;
+    padding: 12px;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    position: relative;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* For larger devices */
+@media (min-width: 1024px) {
+  .header-time {
+    font-size: 16px;
+  }
+
+  .battery-icon, .signal-icon, .wifi-icon {
+    font-size: 22px;
+  }
+
+  .skolarway-text {
+    font-size: 1.3rem;
+  }
+
+  .skolarway-logo {
+    width: 55px;
+  }
+
+
+  .apply-button {
+    width: auto;
+    padding: 12px 24px;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    position: relative;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+  }
+}

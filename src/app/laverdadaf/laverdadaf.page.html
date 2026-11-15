@@ -1,0 +1,124 @@
+<ion-content fullscreen class="whole">
+
+  <!-- Toolbar -->
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-text color="medium" class="header-time">{{ currentTime }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cellular" class="signal-icon"></ion-icon>
+      <ion-icon name="wifi" class="wifi-icon"></ion-icon>
+      <ion-icon name="battery-full" class="battery-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Logo and Back -->
+  <div class="skolarway-container">
+    <img src="assets/images/2.png" alt="SkolarWay Logo" class="skolarway-logo" />
+    <span class="skolarway-text">SkolarWay</span>
+  </div>
+  <div class="back-icon-container">
+    <a href="/home"><ion-icon name="home-outline" class="back-icon"></ion-icon></a>
+  </div>
+
+  <div class="scholarship-container">
+    <img src="assets/images/La Verdad Christian College (LVCC).PNG" alt="CHED Logo" class="logo-img" />
+    <h2 class="scholarship-title">La Verdad Christian College (LVCC) Application Form</h2>
+
+    <form [formGroup]="scholarshipForm" (ngSubmit)="onSubmit()">
+
+      <!-- ACADEMIC YEAR -->
+      <h3>Academic Year</h3>
+      <input type="text" formControlName="academicYear"><br>
+
+      <!-- I. PERSONAL INFORMATION -->
+      <h3>I. PERSONAL INFORMATION</h3>
+      <label>Full Name (Last, First, Middle):</label>
+      <input type="text" formControlName="fullName"><br>
+
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="birthDate"><br>
+
+      <label>Age:</label>
+      <input type="number" formControlName="age"><br>
+
+      <label>Sex:</label>
+      <input type="radio" value="Male" formControlName="sex"> Male
+      <input type="radio" value="Female" formControlName="sex"> Female<br>
+
+      <label>Citizenship:</label>
+      <input type="text" formControlName="citizenship"><br>
+
+      <label>Contact Number:</label>
+      <input type="text" formControlName="contactNumber"><br>
+
+      <label>Email Address:</label>
+      <input type="email" formControlName="email"><br>
+
+      <label>Home Address:</label>
+      <input type="text" formControlName="address"><br>
+
+      <!-- II. EDUCATIONAL BACKGROUND -->
+      <h3>II. EDUCATIONAL BACKGROUND</h3>
+      <label>Educational Level Applying For:</label><br>
+      <input type="radio" value="Elementary" formControlName="educationLevel"> Elementary
+      <input type="radio" value="Junior High School" formControlName="educationLevel"> Junior High School
+      <input type="radio" value="Senior High School" formControlName="educationLevel"> Senior High School
+      <input type="radio" value="College" formControlName="educationLevel"> College
+      <input type="radio" value="Transferee" formControlName="educationLevel"> Transferee<br>
+
+      <label>Grade Level / Year Level Applying For:</label>
+      <input type="text" formControlName="gradeLevel"><br>
+
+      <label>Last School Attended:</label>
+      <input type="text" formControlName="lastSchoolAttended"><br>
+
+      <label>School Year Attended:</label>
+      <input type="text" formControlName="schoolYearAttended"><br>
+
+      <label>General Weighted Average (GWA):</label>
+      <input type="number" formControlName="gwa"><br>
+
+      <!-- III. SCHOLARSHIP INTEREST -->
+      <h3>III. SCHOLARSHIP INTEREST</h3>
+      <label>Have you previously applied for an LVCC scholarship?</label><br>
+      <input type="radio" value="Yes" formControlName="previouslyApplied"> Yes
+      <input type="radio" value="No" formControlName="previouslyApplied"> No<br>
+
+      <label>If yes, when?</label>
+      <input type="text" formControlName="previousApplicationDate"><br>
+
+      <label>How did you learn about the LVCC scholarship?</label><br>
+      <input type="radio" value="School Referral" formControlName="sourceOfInfo"> School Referral
+      <input type="radio" value="Social Media" formControlName="sourceOfInfo"> Social Media
+      <input type="radio" value="Website" formControlName="sourceOfInfo"> Website
+      <input type="radio" value="Family/Friends" formControlName="sourceOfInfo"> Family/Friends
+      <input type="radio" value="Others" formControlName="sourceOfInfo"> Others: 
+      <input type="text" formControlName="otherSource"><br>
+
+      <!-- IV. DOCUMENTARY REQUIREMENTS CHECKLIST -->
+      <h3>IV. DOCUMENTARY REQUIREMENTS CHECKLIST</h3>
+      <label><input type="checkbox" [checked]="docs['applicationForm']"> Completed Scholarship Application Form</label><br>
+      <input type="file" (change)="onFileChange('applicationForm', $event)"><br>
+      <label><input type="checkbox" [checked]="docs['schoolRecords']"> Valid School Records (e.g., Report Card, Transcript)</label><br>
+      <input type="file" (change)="onFileChange('schoolRecords', $event)"><br>
+      <label><input type="checkbox" [checked]="docs['identityProof']"> Proof of Identity (e.g., Birth Certificate or Valid ID)</label><br>
+      <input type="file" (change)="onFileChange('identityProof', $event)"><br>
+      <label><input type="checkbox" [checked]="docs['idPhoto']"> Recent 2x2 ID Photo</label><br>
+      <input type="file" (change)="onFileChange('idPhoto', $event)"><br>
+
+      <!-- V. STUDENT DECLARATION -->
+      <h3>V. STUDENT DECLARATION</h3>
+      <p>I certify that the information provided in this application is true and complete. I understand that misrepresentation may result in disqualification from the scholarship. I agree to abide by the rules and requirements of La Verdad Christian College and actively participate in all academic and formation activities.</p>
+
+      <label>Signature of Applicant:</label>
+      <input type="file" (change)="onFileChange('signature', $event)"><br>
+
+      <label>Date:</label>
+      <input type="date" formControlName="commitmentDate"><br><br>
+
+      <ion-button type="submit" expand="block">Submit</ion-button>
+    </form>
+
+  </div>
+</ion-content>

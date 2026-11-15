@@ -1,0 +1,260 @@
+.whole {
+    --background: #F3FBFB;
+    height: 100vh;
+    padding-bottom: 50px; /* Ensure footer is not overlapping content */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .custom-toolbar {
+    --background: #F3FBFB;
+    color: #272343;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0px 0;
+    box-sizing: border-box;
+  }
+  
+  .header-time {
+    font-size: 14px;
+    padding-left: 30px;
+    color: black;
+  }
+  
+  .battery-icon,
+  .signal-icon,
+  .wifi-icon {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .battery-icon {
+    padding-right: 30px;
+  }
+  
+  .signal-icon {
+    padding-right: 10px;
+  }
+  
+  .wifi-icon {
+    padding-right: 10px;
+  }
+  
+  .skolarway-container {
+    margin-top: 60px;
+    padding-left: 20px;
+    background-color: #F3FBFB;
+    display: flex;
+    align-items: center;
+  }
+  
+  .skolarway-logo {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  
+  .skolarway-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #272343;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
+  
+  
+  
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    background-color: #f3fafa;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    margin-bottom: 16px;
+  }
+  
+  .profile-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 4px 0 0;
+    color: #000;
+  }
+  
+  .profile-role {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+    text-transform: uppercase;
+    margin-top: 2px; // Pulled it closer to the name
+    margin-bottom: 20px;
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  .custom-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #272343;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+      z-index: 999;
+    }
+    
+    .tab-button {
+      position: relative;
+      text-align: center;
+      flex: 1;
+      text-decoration: none;  
+    }
+    
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      margin-top: 10px;
+    }
+    
+    .tab-button.active .icon-wrapper {
+      background-color: #fdd835;
+      transform: translateY(-20px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    ion-icon {
+      font-size: 24px;
+      color: white;
+      z-index: 10;
+    }
+    
+    .tab-label {
+      font-size: 12px;
+      margin-top: 4px;
+      color: transparent;
+      font-weight: 600;
+      display: block;
+      transition: color 0.3s ease;
+      transform: translateY(-16px); 
+    }
+    
+    .tab-button.active .tab-label {
+      color: white;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .form-wrapper {
+        padding: 16px;
+        background-color: #f4fbfb;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+      
+      .form-label {
+        font-weight: bold;
+        margin-top: 12px;
+        display: block;
+        font-size: 14px;
+        color: #000;
+      }
+      
+      .custom-input {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #3d3d58;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        outline: none;
+      }
+      
+      .save-button {
+        background-color: #c1ebe7;
+        color: #000;
+        font-weight: bold;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+
+      .save-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;     /* Remove top space */
+        margin-bottom: 0;  /* Remove bottom space */
+      }
+      
+      .save-button {
+        background-color: #c1ebe7;
+        color: #000;
+        font-weight: bold;
+        padding: 6px 30px;       /* Reduce top/bottom padding */
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 5px 0;            /* Small vertical margin if needed */
+      }
+      
+      
+      
